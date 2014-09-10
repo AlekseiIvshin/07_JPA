@@ -11,6 +11,10 @@ public class CustomerRepositoryImpl implements CustomerRepository{
 	private static final int CUSTOMER_IN_RESULT = 10;
 	private EntityManager em;
 	
+	public CustomerRepositoryImpl(EntityManager em){
+		this.em = em;
+	}
+	
 	public Customer create(Customer customer) {
 		Customer c = new Customer();
 		c.setName(customer.getName());

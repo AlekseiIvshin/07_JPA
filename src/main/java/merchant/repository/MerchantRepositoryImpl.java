@@ -11,6 +11,10 @@ public class MerchantRepositoryImpl implements MerchantRepository{
 	private static final int CUSTOMER_IN_RESULT = 10;
 	private EntityManager em;
 	
+	public MerchantRepositoryImpl(EntityManager em){
+		this.em = em;
+	}
+	
 	public Merchant create(Merchant merchant) {
 		Merchant m = new Merchant();
 		m.setName(merchant.getName());

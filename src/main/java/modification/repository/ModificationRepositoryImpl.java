@@ -14,6 +14,10 @@ public class ModificationRepositoryImpl implements ModificationRepository {
 	
 	private EntityManager em;
 	
+	public ModificationRepositoryImpl(EntityManager em){
+		this.em = em;
+	}
+	
 	public Modification create(Model model, String name) {
 		Modification m = new Modification();
 		m.setName(name);

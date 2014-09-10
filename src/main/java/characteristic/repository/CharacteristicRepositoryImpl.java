@@ -12,6 +12,10 @@ public class CharacteristicRepositoryImpl implements CharacteristicRepository {
 	
 	private EntityManager em;
 	
+	public CharacteristicRepositoryImpl(EntityManager em){
+		this.em = em;
+	}
+	
 	public Characteristic find(int id) {
 		return em.find(Characteristic.class,id);
 	}

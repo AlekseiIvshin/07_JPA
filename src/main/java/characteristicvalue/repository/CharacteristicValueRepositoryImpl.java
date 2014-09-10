@@ -16,6 +16,10 @@ public class CharacteristicValueRepositoryImpl implements
 	
 	private EntityManager em;
 	
+	public CharacteristicValueRepositoryImpl(EntityManager em){
+		this.em = em;
+	}
+	
 	public CharacteristicValue create(Modification modification,
 			Characteristic characteristic, String value, String unit) {
 		CharacteristicValue cv = new CharacteristicValue();
