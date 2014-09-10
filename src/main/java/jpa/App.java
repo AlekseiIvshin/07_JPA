@@ -1,5 +1,7 @@
 package jpa;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -7,8 +9,12 @@ import javax.persistence.Persistence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import marks.service.MarkService;
-import marks.service.MarkServiceImpl;
+import marks.dao.Mark;
+import marks.repository.MarkRepository;
+import marks.repository.MarkRepositoryImpl;
+import models.dao.Model;
+import models.repository.ModelRepository;
+import models.repository.ModelRepositoryImpl;
 
 /** 
  * Main. 
@@ -25,8 +31,11 @@ public class App {
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("07_JPA");
 		EntityManager em = emf.createEntityManager();
-		MarkService markService = new MarkServiceImpl(em);
-		LOG.info(markService.findMark(1).toString());
+		MarkRepository markService = new MarkRepositoryImpl(em);
+		List<Mark> marks = markService.find("M%");
+		for(Mark m: marks){
+			LOG.info(m.toString());
+		}
 		
 	}
 

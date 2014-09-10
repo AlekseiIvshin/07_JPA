@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="07_JPA" transaction-type="RESOURCE_LOCAL">
-		<class>marks.domain.Mark</class>
-		<class>models.domain.Model</class>
-		<class>characteristics.domain.Characteristic</class>
-		<class>customers.domain.Customer</class>
-		<class>merchans.domain.Merchant</class>
-		<class>modifications.domain.Modification</class>
-		<class>characteristicvalue.domain.CharacteristicValue</class>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>marks.dao.Mark</class>
+		<class>models.dao.Model</class>
+		<class>characteristics.dao.Characteristic</class>
+		<class>customers.dao.Customer</class>
+		<class>merchant.dao.Merchant</class>
+		<class>modifications.dao.Modification</class>
+		<class>characteristicvalue.dao.CharacteristicValue</class>
 		<properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url"
@@ -15,6 +16,5 @@
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="root"/>
         </properties>
-		
 	</persistence-unit>
 </persistence>

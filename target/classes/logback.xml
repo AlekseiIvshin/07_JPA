@@ -15,8 +15,11 @@
 	
   <logger name="jpa" level="TRACE"/>
    
+  <logger name="org.hibernate" level="error">
+    <appender-ref ref="FILE" />
+  </logger>
  
-  <root level="debug">
+  <root level="info">
     <appender-ref ref="STDOUT" />
 	<appender-ref ref="FILE"/>
   </root>
