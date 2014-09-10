@@ -9,6 +9,7 @@
 		<class>merchant.dao.Merchant</class>
 		<class>modifications.dao.Modification</class>
 		<class>characteristicvalue.dao.CharacteristicValue</class>
+		<class>store.dao.Store</class>
 		<properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url"
