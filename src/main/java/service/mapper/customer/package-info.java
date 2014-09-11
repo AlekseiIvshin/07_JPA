@@ -5,4 +5,4 @@
  * @author Aleksei_Ivshin
  *
  */
-package customer.dao;
+package service.mapper.customer;

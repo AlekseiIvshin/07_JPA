@@ -1,129 +1,46 @@
 package customer.dao;
 
-import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import dao.customer.Customer;
 
 /**
- * Entity of table 'customer'.
- * @author AlekseiIvshin
+ * Customer repository.
+ * @author Aleksei_Ivshin
  *
  */
-@Entity
-@Table(name = "customer")
-public class CustomerDAO {
+public interface CustomerDAO {
+
+	/**
+	 * Create customer to data store.
+	 * @param customer customer data
+	 * @return created customer
+	 */
+	Customer create(Customer customer);
 	
 	/**
-	 * Customer id.
+	 * Find customer by id.
+	 * @param id customer id
+	 * @return founded customer
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id_customer")
-	private int id;
+	Customer find(int id);
 	
 	/**
-	 * Customer name.
+	 * Find all customers.
+	 * @return list of customer
 	 */
-	@Column(name = "name")
-	private String name;
-	
-	/** 
-	 * Customer surname.
-	 */
-	@Column(name = "surname")
-	private String surname;
+	List<Customer> findAll();
 	
 	/**
-	 * Customer patronymic.
+	 * Update customer data in data store. 
+	 * @param newCustomerData new data
+	 * @return return changed customer
 	 */
-	@Column(name = "patronic")
-	private String patronymic;
+	Customer update(Customer newCustomerData);
 	
 	/**
-	 * Customer passport series.
+	 * Remove customer from data store.
+	 * @param id customer id
 	 */
-	@Column(name = "passport_series")
-	private String passportSeries;
-	
-	/**
-	 * Customer passport number.
-	 */
-	@Column(name = "passport_number")
-	private String passportNumber;
-	
-	/**
-	 * Customer birth date.
-	 */
-	@Column(name = "birthdate")
-	@Temporal(TemporalType.DATE)
-	private Date birthDate;
-	
-	/**
-	 * Default constuctor.
-	 */
-	public CustomerDAO() { }
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public String getPatronymic() {
-		return patronymic;
-	}
-
-	public void setPatronymic(String patronymic) {
-		this.patronymic = patronymic;
-	}
-
-	public String getPassportSeries() {
-		return passportSeries;
-	}
-
-	public void setPassportSeries(String passportSeries) {
-		this.passportSeries = passportSeries;
-	}
-
-	public String getPassportNumber() {
-		return passportNumber;
-	}
-
-	public void setPassportNumber(String passportNumber) {
-		this.passportNumber = passportNumber;
-	}
-
-	public Date getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
+	void remove(int id);
 }

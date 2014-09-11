@@ -57,8 +57,8 @@ public class CustomerDomainImpl implements CustomerDomain {
 
 	@Override
 	public String toString() {
-		return "[id="+id+"][surname="+surname+"][name="+name+"]"
-				+ "[patronymic="+patronymic+"]"
-				+ "[passport="+passportSeries+" "+passportNumber+"]";
+		return "CustomerDomain [id="+id+", surname="+surname+", name="+name
+				+ ", patronymic="+patronymic
+				+ ", passport="+passportSeries+" "+passportNumber+"]";
 	}
 }

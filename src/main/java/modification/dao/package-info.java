@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author AlekseiIvshin
+ * @author Aleksei_Ivshin
  *
  */
 package modification.dao;

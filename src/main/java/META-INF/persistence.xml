@@ -5,7 +5,7 @@
 		<class>mark.dao.Mark</class>
 		<class>model.dao.Model</class>
 		<class>characteristic.dao.Characteristic</class>
-		<class>customer.dao.CustomerDAO</class>
+		<class>dao.customer.Customer</class>
 		<class>merchant.dao.Merchant</class>
 		<class>modification.dao.Modification</class>
 		<class>characteristicvalue.dao.CharacteristicValue</class>
