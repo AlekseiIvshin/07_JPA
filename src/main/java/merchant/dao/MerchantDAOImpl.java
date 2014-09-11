@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import dao.merchant.Merchant;
+
 public class MerchantDAOImpl implements MerchantDAO{
 
 	private static final int CUSTOMER_IN_RESULT = 10;

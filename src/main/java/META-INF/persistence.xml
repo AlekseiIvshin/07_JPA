@@ -6,7 +6,7 @@
 		<class>model.dao.Model</class>
 		<class>characteristic.dao.Characteristic</class>
 		<class>dao.customer.Customer</class>
-		<class>merchant.dao.Merchant</class>
+		<class>dao.merchant.Merchant</class>
 		<class>modification.dao.Modification</class>
 		<class>characteristicvalue.dao.CharacteristicValue</class>
 		<class>store.dao.Store</class>
@@ -16,7 +16,7 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/auto_show"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="9404"/>
         </properties>
 	</persistence-unit>
 </persistence>

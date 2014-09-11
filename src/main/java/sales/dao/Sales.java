@@ -15,7 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import dao.customer.Customer;
-import merchant.dao.Merchant;
+import dao.merchant.Merchant;
 import modification.dao.Modification;
 
 /**

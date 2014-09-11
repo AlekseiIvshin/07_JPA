@@ -2,6 +2,8 @@ package merchant.dao;
 
 import java.util.List;
 
+import dao.merchant.Merchant;
+
 /**
  * Merchant repository.
  * @author Aleksei_Ivshin

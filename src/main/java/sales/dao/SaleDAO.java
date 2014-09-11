@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import dao.customer.Customer;
-import merchant.dao.Merchant;
+import dao.merchant.Merchant;
 import modification.dao.Modification;
 
 /** 

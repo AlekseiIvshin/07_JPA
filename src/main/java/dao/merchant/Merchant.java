@@ -1,4 +1,4 @@
-package merchant.dao;
+package dao.merchant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

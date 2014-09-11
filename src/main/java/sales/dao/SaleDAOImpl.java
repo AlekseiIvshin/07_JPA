@@ -5,9 +5,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import merchant.dao.Merchant;
 import modification.dao.Modification;
 import dao.customer.Customer;
+import dao.merchant.Merchant;
 
 public class SaleDAOImpl implements SaleDAO {
 
