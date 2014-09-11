@@ -2,7 +2,7 @@ package customer.repository;
 
 import java.util.List;
 
-import customer.dao.Customer;
+import customer.dao.CustomerDAO;
 
 /**
  * Customer repository.
@@ -16,20 +16,20 @@ public interface CustomerRepository {
 	 * @param customer customer data
 	 * @return created customer
 	 */
-	Customer create(Customer customer);
+	CustomerDAO create(CustomerDAO customer);
 	
 	/**
 	 * Find customer by id.
 	 * @param id customer id
 	 * @return founded customer
 	 */
-	Customer find(int id);
+	CustomerDAO find(int id);
 	
 	/**
 	 * Find all customers.
 	 * @return list of customer
 	 */
-	List<Customer> findAll();
+	List<CustomerDAO> findAll();
 	
 	/**
 	 * Update customer data in data store. 
@@ -37,7 +37,7 @@ public interface CustomerRepository {
 	 * @param newCustomerData new data
 	 * @return return changed customer
 	 */
-	Customer update(int id, Customer newCustomerData);
+	CustomerDAO update(int id, CustomerDAO newCustomerData);
 	
 	/**
 	 * Remove customer from data store.

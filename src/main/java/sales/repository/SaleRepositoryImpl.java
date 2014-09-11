@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import merchant.dao.Merchant;
 import modification.dao.Modification;
 import sales.dao.Sales;
-import customer.dao.Customer;
+import customer.dao.CustomerDAO;
 
 public class SaleRepositoryImpl implements SaleRepository {
 
@@ -19,7 +19,7 @@ public class SaleRepositoryImpl implements SaleRepository {
 	public SaleRepositoryImpl(EntityManager em){
 		this.em = em;
 	}
-	public Sales create(Modification modification, Customer customer,
+	public Sales create(Modification modification, CustomerDAO customer,
 			Merchant merchant,  BigDecimal price) {
 		Sales s = new Sales();
 		s.setCustomer(customer);
@@ -44,7 +44,7 @@ public class SaleRepositoryImpl implements SaleRepository {
 				.getResultList();
 	}
 
-	public List<Sales> find(Customer customer) {
+	public List<Sales> find(CustomerDAO customer) {
 		return em
 				.createQuery("SELECT s FROM Sales s "
 						+ "WHERE s.customer=:customer")

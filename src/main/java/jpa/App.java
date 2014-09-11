@@ -9,6 +9,10 @@ import javax.persistence.Persistence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import customer.domain.CustomerDomain;
+import customer.mediator.CustomerMediatorImpl;
+import customer.service.CustomerService;
+import customer.service.CustomerServiceImpl;
 import mark.dao.Mark;
 import mark.repository.MarkRepository;
 import mark.repository.MarkRepositoryImpl;
@@ -29,12 +33,10 @@ public class App {
 	 * @param args in arguments
 	 */
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("07_JPA");
-		EntityManager em = emf.createEntityManager();
-		MarkRepository markService = new MarkRepositoryImpl(em);
-		List<Mark> marks = markService.find("M%");
-		for(Mark m: marks){
-			LOG.info(m.toString());
+		CustomerService customerService = new CustomerServiceImpl(new CustomerMediatorImpl());
+		List<CustomerDomain> customers = customerService.getAllCustomers();
+		for(CustomerDomain cd: customers){
+			LOG.info(cd.toString());
 		}
 		
 	}

@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "customer")
-public class Customer {
+public class CustomerDAO {
 	
 	/**
 	 * Customer id.
@@ -68,7 +68,7 @@ public class Customer {
 	/**
 	 * Default constuctor.
 	 */
-	public Customer() { }
+	public CustomerDAO() { }
 
 	public int getId() {
 		return id;

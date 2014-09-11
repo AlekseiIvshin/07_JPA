@@ -6589,3 +6589,43 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'auto_show.hibe
 11:18:05.088 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
 11:18:05.096 [main] INFO  o.h.e.j.internal.LobCreatorBuilder - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
 11:18:05.222 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory - HHH000397: Using ASTQueryTranslatorFactory
+10:50:13.284 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+10:51:20.137 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+10:51:54.061 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+10:52:01.130 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+10:52:35.549 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+10:53:06.727 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+11:06:51.183 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+11:10:19.757 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@59e612eb
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@fe43069
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@4e2645a5
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@32a67bb8
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@50048702
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@593bbd58
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@610c0a2c
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@5d70007a
+11:10:19.865 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@642f7982
+11:10:19.866 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@68d27930
+11:16:32.347 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+11:16:32.455 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@18e28530
+11:16:32.455 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@3f961f13
+11:16:32.455 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@18d23902
+11:16:32.455 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@119cbf09
+11:16:32.456 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@49c1f0e7
+11:16:32.456 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@5baef385
+11:16:32.456 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@3af5cfc9
+11:16:32.456 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@601cb35c
+11:16:32.456 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@7c438e4f
+11:16:32.456 [main] INFO  jpa.App - customer.domain.CustomerDomainImpl@37342445
+11:18:27.326 [main] INFO  c.mediator.CustomerMediatorImpl - Find 10 cusomers in data store.
+11:18:27.433 [main] INFO  jpa.App - [id=1][surname=SurName 100][name=Name 100][patronymic=Patronic 100][passport=9100 100100]
+11:18:27.433 [main] INFO  jpa.App - [id=2][surname=SurName 101][name=Name 101][patronymic=Patronic 101][passport=9101 101101]
+11:18:27.433 [main] INFO  jpa.App - [id=3][surname=SurName 102][name=Name 102][patronymic=Patronic 102][passport=9102 102102]
+11:18:27.434 [main] INFO  jpa.App - [id=4][surname=SurName 103][name=Name 103][patronymic=Patronic 103][passport=9103 103103]
+11:18:27.434 [main] INFO  jpa.App - [id=5][surname=SurName 104][name=Name 104][patronymic=Patronic 104][passport=9104 104104]
+11:18:27.434 [main] INFO  jpa.App - [id=6][surname=SurName 105][name=Name 105][patronymic=Patronic 105][passport=9105 105105]
+11:18:27.434 [main] INFO  jpa.App - [id=7][surname=SurName 106][name=Name 106][patronymic=Patronic 106][passport=9106 106106]
+11:18:27.434 [main] INFO  jpa.App - [id=8][surname=SurName 107][name=Name 107][patronymic=Patronic 107][passport=9107 107107]
+11:18:27.434 [main] INFO  jpa.App - [id=9][surname=SurName 108][name=Name 108][patronymic=Patronic 108][passport=9108 108108]
+11:18:27.434 [main] INFO  jpa.App - [id=10][surname=SurName 109][name=Name 109][patronymic=Patronic 109][passport=9109 109109]

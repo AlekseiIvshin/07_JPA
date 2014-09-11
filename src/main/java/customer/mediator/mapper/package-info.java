@@ -5,4 +5,4 @@
  * @author Aleksei_Ivshin
  *
  */
-package mapper.mediator;
+package customer.mediator.mapper;

@@ -3,7 +3,7 @@ package sales.repository;
 import java.math.BigDecimal;
 import java.util.List;
 
-import customer.dao.Customer;
+import customer.dao.CustomerDAO;
 import sales.dao.Sales;
 import merchant.dao.Merchant;
 import modification.dao.Modification;
@@ -24,7 +24,7 @@ public interface SaleRepository {
 	 * @return created sale
 	 */
 	Sales create(Modification modification, 
-			Customer customer, Merchant merchant, 
+			CustomerDAO customer, Merchant merchant, 
 			BigDecimal price);
 	
 	/**
@@ -46,7 +46,7 @@ public interface SaleRepository {
 	 * @param customer customer
 	 * @return founded sales
 	 */
-	List<Sales> find(Customer customer);
+	List<Sales> find(CustomerDAO customer);
 	
 	/**
 	 * Find sale by merchant.

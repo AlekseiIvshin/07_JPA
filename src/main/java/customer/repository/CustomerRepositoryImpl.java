@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import customer.dao.Customer;
+import customer.dao.CustomerDAO;
 
 public class CustomerRepositoryImpl implements CustomerRepository{
 
@@ -15,8 +15,8 @@ public class CustomerRepositoryImpl implements CustomerRepository{
 		this.em = em;
 	}
 	
-	public Customer create(Customer customer) {
-		Customer c = new Customer();
+	public CustomerDAO create(CustomerDAO customer) {
+		CustomerDAO c = new CustomerDAO();
 		c.setName(customer.getName());
 		c.setSurname(customer.getSurname());
 		c.setPatronymic(customer.getPatronymic());
@@ -29,18 +29,18 @@ public class CustomerRepositoryImpl implements CustomerRepository{
 		return c;
 	}
 
-	public Customer find(int id) {
-		return em.find(Customer.class, id);
+	public CustomerDAO find(int id) {
+		return em.find(CustomerDAO.class, id);
 	}
 
-	public List<Customer> findAll() {
-		return em.createQuery("SELECT c FROM Customer c")
+	public List<CustomerDAO> findAll() {
+		return em.createQuery("SELECT c FROM CustomerDAO c")
 				.setMaxResults(CUSTOMER_IN_RESULT)
 				.getResultList();
 	}
 
-	public Customer update(int id, Customer newCustomerData) {
-		Customer c = em.find(Customer.class, id);
+	public CustomerDAO update(int id, CustomerDAO newCustomerData) {
+		CustomerDAO c = em.find(CustomerDAO.class, id);
 		if (c != null) {
 			c.setName(newCustomerData.getName());
 			c.setSurname(newCustomerData.getSurname());
@@ -54,7 +54,7 @@ public class CustomerRepositoryImpl implements CustomerRepository{
 	}
 
 	public void remove(int id) {
-		Customer c = em.find(Customer.class, id);
+		CustomerDAO c = em.find(CustomerDAO.class, id);
 		if (c != null) {
 			em.refresh(c);
 		}

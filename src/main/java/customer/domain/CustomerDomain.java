@@ -5,7 +5,7 @@ import java.util.Date;
 public interface CustomerDomain {
 
 	int getId();
-	void setId();
+	void setId(int id);
 	String getName();
 	void setName(String name);
 	String getSurname();
@@ -17,5 +17,5 @@ public interface CustomerDomain {
 	String getPassportSeries();
 	void setPassportSeries(String passportSeries);
 	Date getBirthDate();
-	void setBitrthDate(Date birthDate);
+	void setBirthDate(Date birthDate);
 }

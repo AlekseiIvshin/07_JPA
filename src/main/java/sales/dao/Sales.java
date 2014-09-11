@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import customer.dao.Customer;
+import customer.dao.CustomerDAO;
 import merchant.dao.Merchant;
 import modification.dao.Modification;
 
@@ -61,7 +61,7 @@ public class Sales {
 	 */
 	@ManyToOne
 	@JoinColumn(name = "id_customer")
-	private Customer customer;
+	private CustomerDAO customer;
 	
 	/**
 	 * Sale merchant.
@@ -102,11 +102,11 @@ public class Sales {
 		this.modification = modification;
 	}
 
-	public Customer getCustomer() {
+	public CustomerDAO getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(CustomerDAO customer) {
 		this.customer = customer;
 	}
 
