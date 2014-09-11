@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import modifications.dao.Modification;
-import characteristics.dao.Characteristic;
+import modification.dao.Modification;
+import characteristic.dao.Characteristic;
 import characteristicvalue.dao.CharacteristicValue;
 
 public class CharacteristicValueRepositoryImpl implements

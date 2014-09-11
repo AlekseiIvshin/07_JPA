@@ -1,8 +1,8 @@
-package marks.repository;
+package mark.repository;
 
 import java.util.List;
 
-import marks.dao.Mark;
+import mark.dao.Mark;
 /**
  * Mark service layer.
  * @author AlekseiIvshin

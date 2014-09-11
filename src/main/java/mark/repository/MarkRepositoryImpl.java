@@ -1,10 +1,10 @@
-package marks.repository;
+package mark.repository;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import marks.dao.Mark;
+import mark.dao.Mark;
 
 public class MarkRepositoryImpl implements MarkRepository {
 

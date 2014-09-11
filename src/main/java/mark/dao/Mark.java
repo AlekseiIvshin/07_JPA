@@ -1,4 +1,4 @@
-package marks.dao;
+package mark.dao;
 
 import javax.annotation.Generated;
 import javax.persistence.Column;

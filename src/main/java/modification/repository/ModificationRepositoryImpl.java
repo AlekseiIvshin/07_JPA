@@ -4,9 +4,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import marks.dao.Mark;
-import models.dao.Model;
-import modifications.dao.Modification;
+import mark.dao.Mark;
+import model.dao.Model;
+import modification.dao.Modification;
 
 public class ModificationRepositoryImpl implements ModificationRepository {
 

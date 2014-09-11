@@ -2,7 +2,7 @@ package customer.repository;
 
 import java.util.List;
 
-import customers.dao.Customer;
+import customer.dao.Customer;
 
 /**
  * Customer repository.

@@ -2,8 +2,8 @@ package car.domain;
 
 import java.util.List;
 
-import modifications.dao.Modification;
-import characteristics.domain.CharacteristicDomain;
+import modification.dao.Modification;
+import characteristic.domain.CharacteristicDomain;
 
 /**
  * Car interface.

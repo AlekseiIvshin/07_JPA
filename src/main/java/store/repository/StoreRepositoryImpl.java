@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import modifications.dao.Modification;
+import modification.dao.Modification;
 import store.dao.Store;
 
 public class StoreRepositoryImpl implements StoreRepository {

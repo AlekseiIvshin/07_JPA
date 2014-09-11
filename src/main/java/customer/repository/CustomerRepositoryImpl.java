@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import customers.dao.Customer;
+import customer.dao.Customer;
 
 public class CustomerRepositoryImpl implements CustomerRepository{
 

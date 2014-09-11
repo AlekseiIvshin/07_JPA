@@ -5,4 +5,4 @@
  * @author dnss
  *
  */
-package characteristics.domain;
+package characteristic.domain;

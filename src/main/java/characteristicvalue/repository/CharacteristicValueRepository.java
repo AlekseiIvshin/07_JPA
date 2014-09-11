@@ -2,8 +2,8 @@ package characteristicvalue.repository;
 
 import java.util.List;
 
-import modifications.dao.Modification;
-import characteristics.dao.Characteristic;
+import modification.dao.Modification;
+import characteristic.dao.Characteristic;
 import characteristicvalue.dao.CharacteristicValue;
 
 /** 

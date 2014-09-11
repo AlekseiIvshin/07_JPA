@@ -3,10 +3,10 @@ package sales.repository;
 import java.math.BigDecimal;
 import java.util.List;
 
-import customers.dao.Customer;
+import customer.dao.Customer;
 import sales.dao.Sales;
 import merchant.dao.Merchant;
-import modifications.dao.Modification;
+import modification.dao.Modification;
 
 /** 
  * Sales repository.

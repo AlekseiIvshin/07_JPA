@@ -6,9 +6,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import merchant.dao.Merchant;
-import modifications.dao.Modification;
+import modification.dao.Modification;
 import sales.dao.Sales;
-import customers.dao.Customer;
+import customer.dao.Customer;
 
 public class SaleRepositoryImpl implements SaleRepository {
 

@@ -5,4 +5,4 @@
  * @author AlekseiIvshin
  *
  */
-package marks.repository;
+package model.dao;

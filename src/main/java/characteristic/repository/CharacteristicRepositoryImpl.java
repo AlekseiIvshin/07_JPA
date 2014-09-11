@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import characteristics.dao.Characteristic;
+import characteristic.dao.Characteristic;
 
 public class CharacteristicRepositoryImpl implements CharacteristicRepository {
 

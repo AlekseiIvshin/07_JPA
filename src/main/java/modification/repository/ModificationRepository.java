@@ -2,9 +2,9 @@ package modification.repository;
 
 import java.util.List;
 
-import marks.dao.Mark;
-import models.dao.Model;
-import modifications.dao.Modification;
+import mark.dao.Mark;
+import model.dao.Model;
+import modification.dao.Modification;
 
 /** 
  * Modification repository.

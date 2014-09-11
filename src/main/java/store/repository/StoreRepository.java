@@ -2,8 +2,9 @@ package store.repository;
 
 import java.math.BigDecimal;
 import java.util.List;
+
 import store.dao.Store;
-import modifications.dao.Modification;
+import modification.dao.Modification;
 
 /**
  * Store repository.

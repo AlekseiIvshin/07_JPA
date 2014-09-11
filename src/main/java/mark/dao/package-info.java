@@ -5,4 +5,4 @@
  * @author AlekseiIvshin
  *
  */
-package marks.dao;
+package mark.dao;

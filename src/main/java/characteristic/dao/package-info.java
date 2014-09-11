@@ -5,4 +5,4 @@
  * @author AlekseiIvshin
  *
  */
-package characteristics.dao;
+package characteristic.dao;

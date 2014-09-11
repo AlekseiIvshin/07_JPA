@@ -5,4 +5,4 @@
  * @author AlekseiIvshin
  *
  */
-package models.dao;
+package customer.dao;

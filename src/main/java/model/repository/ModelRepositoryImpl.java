@@ -1,11 +1,11 @@
-package models.repository;
+package model.repository;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import marks.dao.Mark;
-import models.dao.Model;
+import mark.dao.Mark;
+import model.dao.Model;
 
 public class ModelRepositoryImpl implements ModelRepository{
 

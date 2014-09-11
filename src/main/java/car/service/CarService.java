@@ -2,7 +2,7 @@ package car.service;
 
 import java.util.List;
 
-import characteristics.domain.CharacteristicDomain;
+import characteristic.domain.CharacteristicDomain;
 import car.domain.CarDomain;
 
 /**

@@ -5,4 +5,4 @@
  * @author AlekseiIvshin
  *
  */
-package modifications.dao;
+package modification.dao;

@@ -1,4 +1,4 @@
-package customers.dao;
+package customer.dao;
 
 import java.util.Date;
 

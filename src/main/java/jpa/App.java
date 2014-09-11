@@ -9,12 +9,12 @@ import javax.persistence.Persistence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import marks.dao.Mark;
-import marks.repository.MarkRepository;
-import marks.repository.MarkRepositoryImpl;
-import models.dao.Model;
-import models.repository.ModelRepository;
-import models.repository.ModelRepositoryImpl;
+import mark.dao.Mark;
+import mark.repository.MarkRepository;
+import mark.repository.MarkRepositoryImpl;
+import model.dao.Model;
+import model.repository.ModelRepository;
+import model.repository.ModelRepositoryImpl;
 
 /** 
  * Main. 

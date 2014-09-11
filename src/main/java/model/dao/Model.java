@@ -1,4 +1,4 @@
-package models.dao;
+package model.dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import marks.dao.Mark;
+import mark.dao.Mark;
 
 /**
  * Entity of table 'car_model'.

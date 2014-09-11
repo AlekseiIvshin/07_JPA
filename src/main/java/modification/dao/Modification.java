@@ -1,4 +1,4 @@
-package modifications.dao;
+package modification.dao;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import characteristicvalue.dao.CharacteristicValue;
-import models.dao.Model;
+import model.dao.Model;
 
 /**
  * Entity of table 'modification'.

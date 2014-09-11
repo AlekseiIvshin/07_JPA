@@ -10,8 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import characteristics.dao.Characteristic;
-import modifications.dao.Modification;
+import characteristic.dao.Characteristic;
+import modification.dao.Modification;
 
 /**
  * Entity of table 'car_characteristic_value'.

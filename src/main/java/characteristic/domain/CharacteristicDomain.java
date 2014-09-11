@@ -1,4 +1,4 @@
-package characteristics.domain;
+package characteristic.domain;
 
 /**
  * Characteristic domain.

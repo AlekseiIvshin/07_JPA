@@ -14,9 +14,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import customers.dao.Customer;
+import customer.dao.Customer;
 import merchant.dao.Merchant;
-import modifications.dao.Modification;
+import modification.dao.Modification;
 
 /**
  * Entity of table 'sales'.

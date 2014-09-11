@@ -1,4 +1,4 @@
-package characteristics.dao;
+package characteristic.dao;
 
 import java.util.List;
 

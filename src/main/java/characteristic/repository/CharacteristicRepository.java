@@ -2,7 +2,7 @@ package characteristic.repository;
 
 import java.util.List;
 
-import characteristics.dao.Characteristic;
+import characteristic.dao.Characteristic;
 
 /**
  * Characteristic service layer.
