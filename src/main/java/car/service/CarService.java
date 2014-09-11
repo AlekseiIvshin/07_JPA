@@ -2,7 +2,7 @@ package car.service;
 
 import java.util.List;
 
-import characteristic.domain.CharacteristicDomain;
+import characteristic.domain.CharacteristicDomainComposite;
 import car.domain.CarDomain;
 
 /**
@@ -14,7 +14,7 @@ public interface CarService {
 
 	List<CarDomain> getCars(String mark, String model, String modification);
 	CarDomain addCar(String mark, String model, 
-			String modification, List<CharacteristicDomain> characteristics);
+			String modification, CharacteristicDomainComposite characteristics);
 	CarDomain removeCar(String mark, String model, String modification);
 	
 	
