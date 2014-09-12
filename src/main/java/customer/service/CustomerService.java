@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface CustomerService {
 
-	List<CustomerDomain> getAllCustomers();
-	CustomerDomain getCustomer(int id);
-	CustomerDomain changeCustomer(int id, CustomerDomain newCustomer);
+	List<CustomerDomain> getAll();
+	CustomerDomain change(CustomerDomain changedDomainCustomer);
+	CustomerDomain create(CustomerDomain newCustomer);
 }

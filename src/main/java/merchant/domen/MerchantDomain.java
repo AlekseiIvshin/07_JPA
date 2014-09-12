@@ -5,7 +5,6 @@ import java.util.Date;
 public interface MerchantDomain {
 
 	int getId();
-	void setId();
 	String getName();
 	void setName(String name);
 	String getSurname();

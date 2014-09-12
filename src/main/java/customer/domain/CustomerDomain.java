@@ -5,7 +5,6 @@ import java.util.Date;
 public interface CustomerDomain {
 
 	int getId();
-	void setId(int id);
 	String getName();
 	void setName(String name);
 	String getSurname();

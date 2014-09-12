@@ -2,7 +2,7 @@ package car.domain;
 
 import java.util.List;
 
-import modification.dao.Modification;
+import car.dao.modifiacation.Modification;
 import characteristic.domain.CharacteristicDomainComposite;
 
 /**

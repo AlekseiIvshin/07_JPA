@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import modification.dao.Modification;
+import car.dao.modifiacation.Modification;
 
 /**
  * Entity for table 'store'.

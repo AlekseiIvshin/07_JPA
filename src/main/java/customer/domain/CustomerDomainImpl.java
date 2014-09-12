@@ -4,18 +4,21 @@ import java.util.Date;
 
 public class CustomerDomainImpl implements CustomerDomain {
 
-	private int id;
+	private final int id;
 	private String name;
 	private String surname;
 	private String patronymic;
 	private String passportNumber;
 	private String passportSeries;
 	private Date birthDate;
+	
+	
+	public CustomerDomainImpl(int id){
+		this.id = id;
+	}
+	
 	public int getId() {
 		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getName() {
 		return name;
