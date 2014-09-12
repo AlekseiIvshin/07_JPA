@@ -29,6 +29,7 @@ public class MainMapper implements Mapper {
 	public MainMapper(){
 		mapperFactory = new DefaultMapperFactory
 				.Builder().build();
+		
 		mapperFactory.classMap(CustomerDomainImpl.class, Customer.class)
 				.constructorA("id")
 				.field("name", "name")
@@ -46,6 +47,14 @@ public class MainMapper implements Mapper {
 				.field("surname", "surname")
 				.field("patronymic", "patronymic")
 				.field("id", "id")
+				.register();
+		
+		mapperFactory.classMap(CarDomainImpl.class, Modification.class)
+				.constructorA("id")
+				.field("id", "id")
+				.field("mark", "model.mark.name")
+				.field("model", "model.name")
+				.field("modification", "name")
 				.register();
 		
 		mapperFactory.classMap(CarDomainImpl.class, Modification.class)

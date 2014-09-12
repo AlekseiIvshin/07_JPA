@@ -59,11 +59,11 @@ public interface CarDomain {
 	 * Set car characteristic.
 	 * @param characteristics characteristic list
 	 */
-	void setCharacteristic(CharacteristicDomainComposite characteristics);
+	//void setCharacteristic(CharacteristicDomainComposite characteristics);
 	
 	/**
 	 * Get car characteristics.
 	 * @return car characteristics
 	 */
-	CharacteristicDomainComposite getCharacteristics();
+	//CharacteristicDomainComposite getCharacteristics();
 }

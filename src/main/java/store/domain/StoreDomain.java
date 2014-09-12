@@ -14,4 +14,6 @@ public interface StoreDomain {
 	void setPrice(float price);
 	boolean canTestDrive();
 	void setCanTestDrive(boolean canTestDrive);
+	
+	boolean canSale();
 }

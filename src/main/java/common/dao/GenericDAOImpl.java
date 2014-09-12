@@ -5,13 +5,21 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import customer.service.CustomerServiceImpl;
+
 public class GenericDAOImpl<Model, IdType>  implements GenericDAO<Model, IdType> {
 
 	protected EntityManager entityManager;
 	protected Class<Model> entityType;
+	static final Logger LOG = LoggerFactory.getLogger(GenericDAOImpl.class);
+	
 	
 	public GenericDAOImpl(EntityManager entityManager){
-		this.entityType = (Class<Model>) ((ParameterizedType) getClass().getGenericSuperclass())
+		this.entityType = (Class<Model>) 
+				((ParameterizedType) getClass().getGenericSuperclass())
 				.getActualTypeArguments()[0];
 		this.entityManager = entityManager;
 	}

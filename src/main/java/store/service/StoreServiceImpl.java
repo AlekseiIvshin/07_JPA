@@ -1,4 +1,4 @@
-package customer.service;
+package store.service;
 
 import java.util.List;
 
@@ -13,43 +13,43 @@ import org.slf4j.LoggerFactory;
 import common.dao.GenericDAO;
 import common.mapper.MainMapper;
 import common.mapper.Mapper;
-import customer.dao.Customer;
-import customer.dao.CustomerDAOImpl;
-import customer.domain.CustomerDomain;
+import store.dao.Store;
+import store.dao.StoreDAOImpl;
+import store.domain.StoreDomain;
 
-public class CustomerServiceImpl implements CustomerService {
+public class StoreServiceImpl implements StoreService {
 
 	static final Logger LOG = LoggerFactory
-			.getLogger(CustomerServiceImpl.class);
+			.getLogger(StoreServiceImpl.class);
 
 	private EntityManager entityManager;
-	private GenericDAO<Customer, Integer> customerDAO;
+	private GenericDAO<Store, Integer> storeDAO;
 
-	public CustomerServiceImpl() {
+	public StoreServiceImpl() {
 		EntityManagerFactory entityManagerFactory = Persistence
 				.createEntityManagerFactory("07_JPA");
 		entityManager = entityManagerFactory.createEntityManager();
-		customerDAO = new CustomerDAOImpl(entityManager);
+		storeDAO = new StoreDAOImpl(entityManager);
 	}
 
-	public List<CustomerDomain> getAll() {
-		List<Customer> cusomers = customerDAO.findAll();
+	public List<StoreDomain> getAll() {
+		List<Store> cusomers = storeDAO.findAll();
 		Mapper mapper = new MainMapper();
-		return mapper.mapAsList(cusomers, CustomerDomain.class);
+		return mapper.mapAsList(cusomers, StoreDomain.class);
 	}
 
-	public CustomerDomain change(CustomerDomain changedDomainCustomer) {
+	public StoreDomain change(StoreDomain changedDomainStore) {
 		Mapper mapper = new MainMapper();
-		Customer customer = mapper.map(changedDomainCustomer, Customer.class);
+		Store store = mapper.map(changedDomainStore, Store.class);
 				
-		CustomerDomain result = null;
+		StoreDomain result = null;
 		EntityTransaction transaction = null;
 		try {
 			transaction = entityManager.getTransaction();
 			transaction.begin();
-			Customer changedCustomer = customerDAO.update(customer);
+			Store changedStore = storeDAO.update(store);
 			transaction.commit();
-			result = mapper.map(changedCustomer, CustomerDomain.class);
+			result = mapper.map(changedStore, StoreDomain.class);
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -60,19 +60,19 @@ public class CustomerServiceImpl implements CustomerService {
 		return result;
 	}
 
-	public CustomerDomain create(CustomerDomain newCustomer) {
+	public StoreDomain create(StoreDomain newStore) {
 		Mapper mapper = new MainMapper();
-		Customer customer = mapper.map(newCustomer, Customer.class);
-		LOG.info(customer.toString());
+		Store store = mapper.map(newStore, Store.class);
+		LOG.info(store.toString());
 		
-		CustomerDomain result = null;
+		StoreDomain result = null;
 		EntityTransaction transaction = null;
 		try {
 			transaction = entityManager.getTransaction();
 			transaction.begin();
-			Customer changedCustomer = customerDAO.create(customer);
+			Store changedStore = storeDAO.create(store);
 			transaction.commit();
-			result = mapper.map(changedCustomer, CustomerDomain.class);
+			result = mapper.map(changedStore, StoreDomain.class);
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
@@ -81,6 +81,14 @@ public class CustomerServiceImpl implements CustomerService {
 			entityManager.close();
 		}
 		return result;
+	}
+
+	public StoreDomain decrementQuanity(StoreDomain store) {
+		if(!store.canSale()){
+			return store;
+		}
+		store.setQuantity(store.getQuantity()-1);
+		return change(store);
 	}
 
 }

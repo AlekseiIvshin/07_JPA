@@ -126,4 +126,10 @@ public class Customer {
 		this.birthDate = birthDate;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomerDomain [id="+id+", surname="+surname+", name="+name
+				+ ", patronymic="+patronymic
+				+ ", passport="+passportSeries+" "+passportNumber+"]";
+	}
 }

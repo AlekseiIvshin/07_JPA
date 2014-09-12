@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CustomerDomainImpl implements CustomerDomain {
 
-	private final int id;
+	private int id;
 	private String name;
 	private String surname;
 	private String patronymic;
@@ -12,6 +12,8 @@ public class CustomerDomainImpl implements CustomerDomain {
 	private String passportSeries;
 	private Date birthDate;
 	
+
+	public CustomerDomainImpl(){};
 	
 	public CustomerDomainImpl(int id){
 		this.id = id;
