@@ -12,6 +12,7 @@ import car.domain.CarDomain;
  */
 public interface CarService {
 
+	List<CarDomain> getAll();
 	List<CarDomain> getCars(String mark, String model, String modification);
 	CarDomain addCar(String mark, String model, 
 			String modification, CharacteristicDomainComposite characteristics);

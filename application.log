@@ -7237,3 +7237,186 @@ com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'auto_show.hibe
 10:13:46.299 [main] INFO  jpa.App - CustomerDomain [id=101, surname=SurName 200, name=Name 200, patronymic=Patronic 200, passport=9200 200200]
 10:28:46.066 [main] INFO  jpa.App - Before: CustomerDomain [id=1, surname=SurName 100, name=Name 100, patronymic=Patronic 100, passport=9100 100100]
 10:28:46.124 [main] INFO  jpa.App - After: CustomerDomain [id=1, surname=SurName 100, name=New Suctomer name, patronymic=Patronic 100, passport=9100 100100]
+13:21:03.276 [main] INFO  car.service.CarServiceImpl - Founded 2
+13:24:53.673 [main] INFO  car.service.CarServiceImpl - car.dao.modifiacation.Modification@1b5aba6c
+13:24:53.674 [main] INFO  car.service.CarServiceImpl - car.dao.modifiacation.Modification@22aa0b69
+13:26:33.553 [main] INFO  car.service.CarServiceImpl - Modification [id=1, name=6.2 MT (442 hs), model=Model [id=1, name=R8, mark=Mark [id=1, name=Audi]]]
+13:26:33.554 [main] INFO  car.service.CarServiceImpl - Modification [id=2, name=2.9 MT (200 hs), model=Model [id=1, name=R8, mark=Mark [id=1, name=Audi]]]
+13:27:13.125 [main] INFO  car.service.CarServiceImpl - Modification [id=1, name=6.2 MT (442 hs), model=Model [id=1, name=R8, mark=Mark [id=1, name=Audi]]]
+13:27:13.126 [main] INFO  car.service.CarServiceImpl - Modification [id=2, name=2.9 MT (200 hs), model=Model [id=1, name=R8, mark=Mark [id=1, name=Audi]]]
+13:27:45.743 [main] INFO  car.service.CarServiceImpl - Modification [id=1, name=6.2 MT (442 hs), model=Model [id=1, name=R8, mark=Mark [id=1, name=Audi]]]
+13:27:45.743 [main] INFO  car.service.CarServiceImpl - Modification [id=2, name=2.9 MT (200 hs), model=Model [id=1, name=R8, mark=Mark [id=1, name=Audi]]]
+13:38:35.967 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+13:38:37.359 [main] DEBUG m.g.orika.metadata.ClassMapBuilder - ClassMap created:
+	ClassMapBuilder.map(CustomerDomainImpl, Customer)
+	 .field( name(String), name(String) )
+	 .field( surname(String), surname(String) )
+	 .field( patronymic(String), patronymic(String) )
+	 .field( passportSeries(String), passportSeries(String) )
+	 .field( passportNumber(String), passportNumber(String) )
+	 .field( birthDate(Date), birthDate(Date) )
+	 .field( id(int), id(int) )
+	 .constructorA([id])
+13:38:37.367 [main] DEBUG m.g.orika.metadata.ClassMapBuilder - ClassMap created:
+	ClassMapBuilder.map(MerchantDomainImpl, Merchant)
+	 .field( name(String), name(String) )
+	 .field( surname(String), surname(String) )
+	 .field( patronymic(String), patronymic(String) )
+	 .field( id(int), id(int) )
+	 .constructorA([id])
+13:38:37.372 [main] DEBUG m.g.orika.metadata.ClassMapBuilder - ClassMap created:
+	ClassMapBuilder.map(CarDomainImpl, Modification)
+	 .field( id(long), id(long) )
+	 .field( modification(String), name(String) )
+	 .constructorA([id])
+13:38:37.460 [main] DEBUG m.g.o.impl.generator.MapperGenerator - Generating new mapper for (CarDomainImpl, Modification)
+	Orika_Modification_CarDomainImpl_Mapper14963273891104$0.mapAToB(CarDomainImpl, Modification) {
+	 Field(id(long), id(long)) : copying long by reference
+	 Field(modification(String), name(String)) : copying String by reference
+	}
+	Orika_Modification_CarDomainImpl_Mapper14963273891104$0.mapBToA(Modification, CarDomainImpl) {
+	 Field(id(long), id(long)) : excluding because CarDomainImpl.id(long) is not assignable and cannot be mapped in-place
+	 Field(name(String), modification(String)) : copying String by reference
+	}
+13:38:37.473 [main] DEBUG m.g.o.impl.generator.MapperGenerator - Generating new mapper for (CustomerDomainImpl, Customer)
+	Orika_Customer_CustomerDomainImpl_Mapper14963319397324$1.mapAToB(CustomerDomainImpl, Customer) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(passportSeries(String), passportSeries(String)) : copying String by reference
+	 Field(passportNumber(String), passportNumber(String)) : copying String by reference
+	 Field(birthDate(Date), birthDate(Date)) : converting using builtin:CloneableConverter(Copy by cloning:Date, Calendar, XMLGregorianCalendar)
+	 Field(id(int), id(int)) : copying int by reference
+	}
+	Orika_Customer_CustomerDomainImpl_Mapper14963319397324$1.mapBToA(Customer, CustomerDomainImpl) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(passportSeries(String), passportSeries(String)) : copying String by reference
+	 Field(passportNumber(String), passportNumber(String)) : copying String by reference
+	 Field(birthDate(Date), birthDate(Date)) : converting using builtin:CloneableConverter(Copy by cloning:Date, Calendar, XMLGregorianCalendar)
+	 Field(id(int), id(int)) : excluding because CustomerDomainImpl.id(int) is not assignable and cannot be mapped in-place
+	}
+	Types used: [Date]
+	Converters used: [builtin:CloneableConverter(Copy by cloning:Date, Calendar, XMLGregorianCalendar)]
+13:38:37.478 [main] DEBUG m.g.o.impl.generator.MapperGenerator - Generating new mapper for (MerchantDomainImpl, Merchant)
+	Orika_Merchant_MerchantDomainImpl_Mapper14963332883763$2.mapAToB(MerchantDomainImpl, Merchant) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(id(int), id(int)) : copying int by reference
+	}
+	Orika_Merchant_MerchantDomainImpl_Mapper14963332883763$2.mapBToA(Merchant, MerchantDomainImpl) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(id(int), id(int)) : excluding because MerchantDomainImpl.id(int) is not assignable and cannot be mapped in-place
+	}
+13:38:37.491 [main] DEBUG m.g.o.i.g.ObjectFactoryGenerator - Generating new object factory for (CarDomainImpl)
+	Using constructor: public car.domain.CarDomainImpl(long)
+	 Field(id(long), id(long)) : copying long by reference
+13:38:37.494 [main] DEBUG m.g.o.i.g.ObjectFactoryGenerator - Generating new object factory for (CustomerDomainImpl)
+	Using constructor: public customer.domain.CustomerDomainImpl(int)
+	 Field(id(int), id(int)) : copying int by reference
+13:38:37.497 [main] DEBUG m.g.o.i.g.ObjectFactoryGenerator - Generating new object factory for (MerchantDomainImpl)
+	Using constructor: public merchant.domen.MerchantDomainImpl(int)
+	 Field(id(int), id(int)) : copying int by reference
+13:38:37.501 [main] DEBUG m.g.orika.impl.MapperFacadeImpl - MappingStrategy resolved and cached:
+	Inputs:[ sourceClass: merchant.dao.Merchant, sourceType: Object, destinationType: MerchantDomain]
+	Resolved:[ strategy: InstantiateAndUseCustomMapperStrategy, sourceType: Merchant, destinationType: MerchantDomainImpl, mapper: ma.glasnost.orika.impl.ReversedMapper@4713bad5, mapReverse?: false]
+13:38:37.501 [main] INFO  merchant.service.MerchantServiceImpl - 2
+13:38:37.502 [main] INFO  common.App - Founded 2
+13:38:37.502 [main] INFO  common.App - CustomerDomain [id=1, surname=Пупкин, name=Василий, patronymic=Сидорович]
+13:38:37.502 [main] INFO  common.App - CustomerDomain [id=2, surname=Вассерман, name=Анатолий, patronymic=Александрович]
+13:39:20.109 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+13:39:21.502 [main] DEBUG m.g.orika.metadata.ClassMapBuilder - ClassMap created:
+	ClassMapBuilder.map(CustomerDomainImpl, Customer)
+	 .field( name(String), name(String) )
+	 .field( surname(String), surname(String) )
+	 .field( patronymic(String), patronymic(String) )
+	 .field( passportSeries(String), passportSeries(String) )
+	 .field( passportNumber(String), passportNumber(String) )
+	 .field( birthDate(Date), birthDate(Date) )
+	 .field( id(int), id(int) )
+	 .constructorA([id])
+13:39:21.510 [main] DEBUG m.g.orika.metadata.ClassMapBuilder - ClassMap created:
+	ClassMapBuilder.map(MerchantDomainImpl, Merchant)
+	 .field( name(String), name(String) )
+	 .field( surname(String), surname(String) )
+	 .field( patronymic(String), patronymic(String) )
+	 .field( id(int), id(int) )
+	 .constructorA([id])
+13:39:21.515 [main] DEBUG m.g.orika.metadata.ClassMapBuilder - ClassMap created:
+	ClassMapBuilder.map(CarDomainImpl, Modification)
+	 .field( id(long), id(long) )
+	 .field( modification(String), name(String) )
+	 .constructorA([id])
+13:39:21.600 [main] DEBUG m.g.o.impl.generator.MapperGenerator - Generating new mapper for (CarDomainImpl, Modification)
+	Orika_Modification_CarDomainImpl_Mapper15007411589637$0.mapAToB(CarDomainImpl, Modification) {
+	 Field(id(long), id(long)) : copying long by reference
+	 Field(modification(String), name(String)) : copying String by reference
+	}
+	Orika_Modification_CarDomainImpl_Mapper15007411589637$0.mapBToA(Modification, CarDomainImpl) {
+	 Field(id(long), id(long)) : excluding because CarDomainImpl.id(long) is not assignable and cannot be mapped in-place
+	 Field(name(String), modification(String)) : copying String by reference
+	}
+13:39:21.615 [main] DEBUG m.g.o.impl.generator.MapperGenerator - Generating new mapper for (CustomerDomainImpl, Customer)
+	Orika_Customer_CustomerDomainImpl_Mapper15007456063964$1.mapAToB(CustomerDomainImpl, Customer) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(passportSeries(String), passportSeries(String)) : copying String by reference
+	 Field(passportNumber(String), passportNumber(String)) : copying String by reference
+	 Field(birthDate(Date), birthDate(Date)) : converting using builtin:CloneableConverter(Copy by cloning:Date, Calendar, XMLGregorianCalendar)
+	 Field(id(int), id(int)) : copying int by reference
+	}
+	Orika_Customer_CustomerDomainImpl_Mapper15007456063964$1.mapBToA(Customer, CustomerDomainImpl) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(passportSeries(String), passportSeries(String)) : copying String by reference
+	 Field(passportNumber(String), passportNumber(String)) : copying String by reference
+	 Field(birthDate(Date), birthDate(Date)) : converting using builtin:CloneableConverter(Copy by cloning:Date, Calendar, XMLGregorianCalendar)
+	 Field(id(int), id(int)) : excluding because CustomerDomainImpl.id(int) is not assignable and cannot be mapped in-place
+	}
+	Types used: [Date]
+	Converters used: [builtin:CloneableConverter(Copy by cloning:Date, Calendar, XMLGregorianCalendar)]
+13:39:21.620 [main] DEBUG m.g.o.impl.generator.MapperGenerator - Generating new mapper for (MerchantDomainImpl, Merchant)
+	Orika_Merchant_MerchantDomainImpl_Mapper15007470798473$2.mapAToB(MerchantDomainImpl, Merchant) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(id(int), id(int)) : copying int by reference
+	}
+	Orika_Merchant_MerchantDomainImpl_Mapper15007470798473$2.mapBToA(Merchant, MerchantDomainImpl) {
+	 Field(name(String), name(String)) : copying String by reference
+	 Field(surname(String), surname(String)) : copying String by reference
+	 Field(patronymic(String), patronymic(String)) : copying String by reference
+	 Field(id(int), id(int)) : excluding because MerchantDomainImpl.id(int) is not assignable and cannot be mapped in-place
+	}
+13:39:21.633 [main] DEBUG m.g.o.i.g.ObjectFactoryGenerator - Generating new object factory for (CarDomainImpl)
+	Using constructor: public car.domain.CarDomainImpl(long)
+	 Field(id(long), id(long)) : copying long by reference
+13:39:21.636 [main] DEBUG m.g.o.i.g.ObjectFactoryGenerator - Generating new object factory for (CustomerDomainImpl)
+	Using constructor: public customer.domain.CustomerDomainImpl(int)
+	 Field(id(int), id(int)) : copying int by reference
+13:39:21.639 [main] DEBUG m.g.o.i.g.ObjectFactoryGenerator - Generating new object factory for (MerchantDomainImpl)
+	Using constructor: public merchant.domen.MerchantDomainImpl(int)
+	 Field(id(int), id(int)) : copying int by reference
+13:39:21.643 [main] DEBUG m.g.orika.impl.MapperFacadeImpl - MappingStrategy resolved and cached:
+	Inputs:[ sourceClass: merchant.dao.Merchant, sourceType: Object, destinationType: MerchantDomain]
+	Resolved:[ strategy: InstantiateAndUseCustomMapperStrategy, sourceType: Merchant, destinationType: MerchantDomainImpl, mapper: ma.glasnost.orika.impl.ReversedMapper@3e334f08, mapReverse?: false]
+13:39:21.643 [main] INFO  merchant.service.MerchantServiceImpl - 2
+13:39:21.643 [main] INFO  common.App - Founded 2
+13:39:21.643 [main] INFO  common.App - CustomerDomain [id=1, surname=Пупкин, name=Василий, patronymic=Сидорович]
+13:39:21.644 [main] INFO  common.App - CustomerDomain [id=2, surname=Вассерман, name=Анатолий, patronymic=Александрович]
+13:39:59.223 [main] INFO  merchant.service.MerchantServiceImpl - 2
+13:39:59.223 [main] INFO  common.App - Founded 2
+13:39:59.223 [main] INFO  common.App - CustomerDomain [id=1, surname=Пупкин, name=Василий, patronymic=Сидорович]
+13:39:59.223 [main] INFO  common.App - CustomerDomain [id=2, surname=Вассерман, name=Анатолий, patronymic=Александрович]
+13:40:39.417 [main] INFO  common.App - Founded 2
+13:40:39.418 [main] INFO  common.App - Car [id=1, mark=null, model=null, modification=6.2 MT (442 hs)]
+13:40:39.418 [main] INFO  common.App - Car [id=2, mark=null, model=null, modification=2.9 MT (200 hs)]
+13:41:13.418 [main] INFO  common.App - Founded 2
+13:41:13.419 [main] INFO  common.App - Car [id=1, mark=Audi, model=R8, modification=6.2 MT (442 hs)]
+13:41:13.419 [main] INFO  common.App - Car [id=2, mark=Audi, model=R8, modification=2.9 MT (200 hs)]

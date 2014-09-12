@@ -101,6 +101,6 @@ public class Model {
 	
 	@Override
 	public String toString() {
-		return "[id="+id+"][name="+name+"][mark="+mark.toString()+"]";
+		return "Model [id="+id+", name="+name+", mark="+mark.toString()+"]";
 	}
 }

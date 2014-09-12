@@ -61,6 +61,6 @@ public class Mark {
 	
 	@Override
 	public String toString() {
-		return "[id="+id+"][name="+name+"]";
+		return "Mark [id="+id+", name="+name+"]";
 	}
 }

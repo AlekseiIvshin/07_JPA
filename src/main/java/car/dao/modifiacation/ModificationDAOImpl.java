@@ -4,11 +4,17 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import car.service.CarServiceImpl;
 import common.dao.GenericDAOImpl;
 
 public class ModificationDAOImpl 
 		extends GenericDAOImpl<Modification, Long>
 		implements ModificationDAO{
+
+	static final Logger LOG = LoggerFactory.getLogger(ModificationDAOImpl.class);
 
 	public ModificationDAOImpl(EntityManager entityManager) {
 		super(entityManager);

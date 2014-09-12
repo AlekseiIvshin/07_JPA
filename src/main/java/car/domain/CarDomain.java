@@ -12,6 +12,13 @@ import characteristic.domain.CharacteristicDomainComposite;
  */
 public interface CarDomain {
 
+	
+	/**
+	 * Get id car.
+	 * @return id 
+	 */
+	long getId();
+	
 	/** 
 	 * Get car mark.
  	 * @return mark
@@ -46,7 +53,7 @@ public interface CarDomain {
 	 * Set modification.
 	 * @param modification modification
 	 */
-	void setModification(Modification modification);
+	void setModification(String modification);
 	
 	/**
 	 * Set car characteristic.

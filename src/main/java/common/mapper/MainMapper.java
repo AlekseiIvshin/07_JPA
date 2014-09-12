@@ -2,6 +2,14 @@ package common.mapper;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import car.dao.mark.Mark;
+import car.dao.mark.MarkDAOImpl;
+import car.dao.modifiacation.Modification;
+import car.domain.CarDomain;
+import car.domain.CarDomainImpl;
 import customer.dao.Customer;
 import customer.domain.CustomerDomain;
 import customer.domain.CustomerDomainImpl;
@@ -10,9 +18,12 @@ import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 import merchant.dao.Merchant;
 import merchant.domen.MerchantDomain;
+import merchant.domen.MerchantDomainImpl;
 
 public class MainMapper implements Mapper {
 
+
+	static final Logger LOG = LoggerFactory.getLogger(MainMapper.class);
 	MapperFactory mapperFactory;
 	
 	public MainMapper(){
@@ -28,9 +39,8 @@ public class MainMapper implements Mapper {
 				.field("birthDate", "birthDate")
 				.field("id", "id")
 				.register();
-		
 
-		mapperFactory.classMap(MerchantDomain.class, Merchant.class)
+		mapperFactory.classMap(MerchantDomainImpl.class, Merchant.class)
 				.constructorA("id")
 				.field("name", "name")
 				.field("surname", "surname")
@@ -38,6 +48,13 @@ public class MainMapper implements Mapper {
 				.field("id", "id")
 				.register();
 		
+		mapperFactory.classMap(CarDomainImpl.class, Modification.class)
+				.constructorA("id")
+				.field("id", "id")
+				.field("mark", "model.mark.name")
+				.field("model", "model.name")
+				.field("modification", "name")
+				.register();
 	}
 
 	public <FromClass, ToClass> ToClass map(FromClass object,

@@ -100,4 +100,9 @@ public class Modification {
 			List<CharacteristicValue> charactericticValues) {
 		this.charactericticValues = charactericticValues;
 	}
+	
+	@Override
+	public String toString() {
+		return "Modification [id="+id+", name="+name+", model="+model.toString()+"]";
+	}
 }

@@ -13,15 +13,12 @@
     </encoder>		
 	</appender>
 	
-  <logger name="jpa" level="TRACE"/>
-  <logger name="customer" level="TRACE">
-  </logger>
    
   <logger name="org.hibernate" level="error">
     <appender-ref ref="FILE" />
   </logger>
  
-  <root level="error">
+  <root level="INFO">
     <appender-ref ref="STDOUT" />
 	<appender-ref ref="FILE"/>
   </root>
