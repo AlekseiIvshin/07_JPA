@@ -8,4 +8,6 @@ public interface CustomerService {
 	List<CustomerDomain> getAll();
 	CustomerDomain change(CustomerDomain changedDomainCustomer);
 	CustomerDomain create(CustomerDomain newCustomer);
+	CustomerDomain get(CustomerDomain customer);
+	CustomerDomain get(int id);
 }

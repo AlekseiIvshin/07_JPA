@@ -5,6 +5,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import sales.dao.Sales;
+import sales.domain.SalesDomain;
+import sales.domain.SalesDomainImpl;
+import store.dao.Store;
+import store.domain.StoreDomain;
+import store.domain.StoreDomainImpl;
 import car.dao.mark.Mark;
 import car.dao.mark.MarkDAOImpl;
 import car.dao.modifiacation.Modification;
@@ -57,12 +63,21 @@ public class MainMapper implements Mapper {
 				.field("modification", "name")
 				.register();
 		
-		mapperFactory.classMap(CarDomainImpl.class, Modification.class)
-				.constructorA("id")
+		mapperFactory.classMap(StoreDomainImpl.class, Store.class)
 				.field("id", "id")
-				.field("mark", "model.mark.name")
-				.field("model", "model.name")
-				.field("modification", "name")
+				.field("quantity", "count")
+				.field("price", "price")
+				.field("canTestDrive", "testDriveAvaible")
+				.field("car", "modification")
+				.register();
+		
+		mapperFactory.classMap(SalesDomainImpl.class, Sales.class)
+				.field("id", "id")
+				.field("customer", "customer")
+				.field("merchant", "merchant")
+				.field("saleDate", "saleDate")
+				.field("price", "price")
+				.field("car", "modification")
 				.register();
 	}
 

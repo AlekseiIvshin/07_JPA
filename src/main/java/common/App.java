@@ -1,5 +1,6 @@
 package common;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +11,13 @@ import merchant.service.MerchantServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import sales.domain.SalesDomain;
+import sales.domain.SalesDomainImpl;
+import sales.service.SalesService;
+import sales.service.SalesServiceImpl;
+import store.domain.StoreDomain;
+import store.service.StoreService;
+import store.service.StoreServiceImpl;
 import car.domain.CarDomain;
 import car.service.CarService;
 import car.service.CarServiceImpl;
@@ -26,19 +34,39 @@ import customer.service.CustomerServiceImpl;
 public class App {
 
 	static final Logger LOG = LoggerFactory.getLogger(App.class);
+	static final CustomerService customerService = new CustomerServiceImpl();
+	static final CarService carService = new CarServiceImpl();
+	static final MerchantService merchantService = new MerchantServiceImpl();
+	static final StoreService storeService = new StoreServiceImpl();
+	static final SalesService salesService = new SalesServiceImpl();
+	
 	/**
 	 * Main.
 	 * @param args in arguments
 	 */
 	public static void main(String[] args) {
+		List<CarDomain> cars = carService.getAll();
+		List<CustomerDomain> customers = customerService.getAll();
+		List<MerchantDomain> merchants = merchantService.getAll();
+		
+		saleCar(cars.get(0), customers.get(0), merchants.get(0));
 	}
 	
-	private static void saleSomeCar(){
-		List<CarDomain> cars = new CarServiceImpl().getAll();
-		List<CustomerDomain> customers = new CustomerServiceImpl().getAll();
-		List<MerchantDomain> merchant = new MerchantServiceImpl().getAll();
+	
+	private <T> void showCollection(List<T> collection){
+		for(T obj: collection){
+			LOG.info(obj.toString());
+		}
+	}
+	
+	private static void saleCar(CarDomain car, CustomerDomain customer, MerchantDomain merchant){
+		CustomerDomain actualCustomer = customerService.get(customer);
+		if( actualCustomer == null ){
+			actualCustomer = customerService.create(customer);
+		}
 		
 		
+		salesService.create(customer, merchant, car);
 	}
 
 }

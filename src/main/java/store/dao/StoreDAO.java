@@ -8,5 +8,5 @@ import car.dao.modifiacation.Modification;
 
 public interface StoreDAO extends GenericDAO<Store, Integer>{
 
-	public List<Store> find(Modification modification);
+	public Store find(Modification modification);
 }

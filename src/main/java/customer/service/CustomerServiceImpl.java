@@ -14,6 +14,7 @@ import common.dao.GenericDAO;
 import common.mapper.MainMapper;
 import common.mapper.Mapper;
 import customer.dao.Customer;
+import customer.dao.CustomerDAO;
 import customer.dao.CustomerDAOImpl;
 import customer.domain.CustomerDomain;
 
@@ -23,7 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
 			.getLogger(CustomerServiceImpl.class);
 
 	private EntityManager entityManager;
-	private GenericDAO<Customer, Integer> customerDAO;
+	private CustomerDAO customerDAO;
 
 	public CustomerServiceImpl() {
 		EntityManagerFactory entityManagerFactory = Persistence
@@ -81,6 +82,18 @@ public class CustomerServiceImpl implements CustomerService {
 			entityManager.close();
 		}
 		return result;
+	}
+
+	public CustomerDomain get(CustomerDomain customer) {
+		Mapper mapper = new MainMapper();
+		Customer cusomer = customerDAO.contains(mapper.map(customer, Customer.class));
+		return mapper.map(cusomer, CustomerDomain.class);
+	}
+
+	public CustomerDomain get(int id) {
+		Customer cusomer = customerDAO.find(new Integer(id));
+		Mapper mapper = new MainMapper();
+		return mapper.map(cusomer, CustomerDomain.class);
 	}
 
 }

@@ -10,10 +10,13 @@ import javax.persistence.Persistence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import car.dao.modifiacation.Modification;
+import car.domain.CarDomain;
 import common.dao.GenericDAO;
 import common.mapper.MainMapper;
 import common.mapper.Mapper;
 import store.dao.Store;
+import store.dao.StoreDAO;
 import store.dao.StoreDAOImpl;
 import store.domain.StoreDomain;
 
@@ -23,7 +26,7 @@ public class StoreServiceImpl implements StoreService {
 			.getLogger(StoreServiceImpl.class);
 
 	private EntityManager entityManager;
-	private GenericDAO<Store, Integer> storeDAO;
+	private StoreDAO storeDAO;
 
 	public StoreServiceImpl() {
 		EntityManagerFactory entityManagerFactory = Persistence
@@ -89,6 +92,13 @@ public class StoreServiceImpl implements StoreService {
 		}
 		store.setQuantity(store.getQuantity()-1);
 		return change(store);
+	}
+
+	public StoreDomain get(CarDomain car) {
+		Mapper mapper = new MainMapper();
+		Modification modif = mapper.map(car, Modification.class);
+		Store store = storeDAO.find(modif);
+		return mapper.map(store, StoreDomain.class);
 	}
 
 }
