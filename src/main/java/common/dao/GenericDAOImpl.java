@@ -48,4 +48,12 @@ public class GenericDAOImpl<Model, IdType>  implements GenericDAO<Model, IdType>
 		entityManager.remove(m);
 	}
 
+	public List<Model> find(int offset, int limit) {
+		return entityManager
+				.createQuery("SELECT entity FROM "+ entityType.getName() +" entity")
+				.setFirstResult(offset)
+				.setMaxResults(limit)
+				.getResultList();
+	}
+
 }

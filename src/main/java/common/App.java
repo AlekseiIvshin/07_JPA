@@ -25,6 +25,8 @@ import customer.domain.CustomerDomain;
 import customer.domain.CustomerDomainImpl;
 import customer.service.CustomerService;
 import customer.service.CustomerServiceImpl;
+import customer.service.CustomerService;
+import customer.service.CustomerServiceImpl;
 
 /** 
  * Main. 
@@ -34,20 +36,22 @@ import customer.service.CustomerServiceImpl;
 public class App {
 
 	static final Logger LOG = LoggerFactory.getLogger(App.class);
-	static final CustomerService customerService = new CustomerServiceImpl();
 	static final CarService carService = new CarServiceImpl();
 	static final MerchantService merchantService = new MerchantServiceImpl();
 	static final StoreService storeService = new StoreServiceImpl();
 	static final SalesService salesService = new SalesServiceImpl();
 	
+	static final CustomerService customerService = new CustomerServiceImpl();
 	/**
 	 * Main.
 	 * @param args in arguments
 	 */
 	public static void main(String[] args) {
 		List<CarDomain> cars = carService.getAll();
-		List<CustomerDomain> customers = customerService.getAll();
 		List<MerchantDomain> merchants = merchantService.getAll();
+		List<CustomerDomain> customers = customerService.getAll();
+		
+		CustomerService cds = new CustomerServiceImpl();
 		
 		saleCar(cars.get(0), customers.get(0), merchants.get(0));
 	}
@@ -60,7 +64,7 @@ public class App {
 	}
 	
 	private static void saleCar(CarDomain car, CustomerDomain customer, MerchantDomain merchant){
-		CustomerDomain actualCustomer = customerService.get(customer);
+		CustomerDomain actualCustomer = customerService.contains(customer);
 		if( actualCustomer == null ){
 			actualCustomer = customerService.create(customer);
 		}
