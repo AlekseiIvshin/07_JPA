@@ -15,4 +15,5 @@ public interface SalesDAO extends GenericDAO<Sales, Integer>{
 	public List<Sales> find(Customer customer);
 
 	public List<Sales> find(Merchant merchant);
+	
 }

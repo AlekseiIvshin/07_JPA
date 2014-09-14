@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import store.dao.Store;
 import common.dao.GenericDAOImpl;
-
 import merchant.dao.Merchant;
 import customer.dao.Customer;
 import car.dao.modifiacation.Modification;
