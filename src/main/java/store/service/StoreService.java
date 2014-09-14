@@ -8,7 +8,7 @@ import car.domain.CarDomain;
 
 public interface StoreService {
 
-	List<StoreDomain> getAll();
+	List<StoreDomain> get(int offset, int count);
 	StoreDomain change(StoreDomain changedDomainStore);
 	StoreDomain create(StoreDomain newStore);
 	StoreDomain get(CarDomain car);

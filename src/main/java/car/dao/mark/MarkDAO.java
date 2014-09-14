@@ -6,5 +6,6 @@ import common.dao.GenericDAO;
 
 public interface MarkDAO extends GenericDAO<Mark, Integer>{
 
-	List<Mark> find(String name);
+	List<Mark> findAny(String name);
+	Mark findOne(String name);
 }

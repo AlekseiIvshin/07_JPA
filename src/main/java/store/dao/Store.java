@@ -2,6 +2,7 @@ package store.dao;
 
 import java.math.BigDecimal;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.CacheRegionDefinition.CacheType;
 
 import car.dao.modifiacation.Modification;
 
@@ -51,7 +54,7 @@ public class Store {
 	/**
 	 * Car.
 	 */
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "id_car_modification")
 	private Modification modification;
 	

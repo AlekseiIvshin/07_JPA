@@ -3,6 +3,7 @@ package sales.dao;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,21 +53,21 @@ public class Sales {
 	/**
 	 * Sale modification.
 	 */
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.REMOVE)
 	@JoinColumn(name = "id_car_modification")
 	private Modification modification;
 	
 	/**
 	 * Sale customer.
 	 */
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.REMOVE)
 	@JoinColumn(name = "id_customer")
 	private Customer customer;
 	
 	/**
 	 * Sale merchant.
 	 */
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.REMOVE)
 	@JoinColumn(name = "id_merchant")
 	private Merchant merchant;
 

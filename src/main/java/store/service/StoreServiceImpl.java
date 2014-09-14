@@ -35,8 +35,8 @@ public class StoreServiceImpl implements StoreService {
 		storeDAO = new StoreDAOImpl(entityManager);
 	}
 
-	public List<StoreDomain> getAll() {
-		List<Store> cusomers = storeDAO.findAll();
+	public List<StoreDomain> get(int offset, int count) {
+		List<Store> cusomers = storeDAO.find(offset, count);
 		Mapper mapper = new MainMapper();
 		return mapper.mapAsList(cusomers, StoreDomain.class);
 	}

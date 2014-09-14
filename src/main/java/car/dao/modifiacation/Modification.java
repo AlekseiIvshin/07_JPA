@@ -5,31 +5,37 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
-import characteristic.values.dao.CharacteristicValue;
 import car.dao.model.Model;
 
 /**
  * Entity of table 'modification'.
+ * 
  * @author AlekseiIvshin
  *
  */
 @Entity
-@Table(name = "car_modification")
+@Table(name = "car_modification", 
+	uniqueConstraints = { @UniqueConstraint(columnNames = {
+		"name", "id_car_model" }) })
 public class Modification {
-	
+
 	/**
 	 * Modification id.
 	 */
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_car_modification")
 	private long id;
-	
+
 	/**
 	 * Modification name.
 	 */
@@ -37,28 +43,17 @@ public class Modification {
 	private String name;
 
 	/**
-	 * Modification is deleted.
-	 */
-	@Column(name = "deleted", columnDefinition = "BIT", length = 1)
-	private boolean deleted;
-	
-	/**
 	 * Modification model.
 	 */
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_car_model")
 	private Model model;
-	
-	/**
-	 * Characteristics of modification.
-	 */
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "modification")
-	private List<CharacteristicValue> charactericticValues;
-	
+
 	/**
 	 * Default constructor.
 	 */
-	public Modification() { }
+	public Modification() {
+	}
 
 	public long getId() {
 		return id;
@@ -76,14 +71,6 @@ public class Modification {
 		this.name = name;
 	}
 
-	public boolean isDeleted() {
-		return deleted;
-	}
-
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
-	}
-
 	public Model getModel() {
 		return model;
 	}
@@ -92,17 +79,9 @@ public class Modification {
 		this.model = model;
 	}
 
-	public List<CharacteristicValue> getCharactericticValues() {
-		return charactericticValues;
-	}
-
-	public void setCharactericticValues(
-			List<CharacteristicValue> charactericticValues) {
-		this.charactericticValues = charactericticValues;
-	}
-	
 	@Override
 	public String toString() {
-		return "Modification [id="+id+", name="+name+", model="+model.toString()+"]";
+		return "Modification [id=" + id + ", name=" + name + ", model="
+				+ model.toString() + "]";
 	}
 }

@@ -10,8 +10,8 @@ import car.domain.CarDomain;
 
 public interface SalesService {
 
-	List<SalesDomain> getAll();
+	List<SalesDomain> get(int offset, int count);
 	SalesDomain change(SalesDomain changedDomainSales);
-	SalesDomain create(SalesDomain newSales);
-	SalesDomain create(CustomerDomain customer, MerchantDomain merchant, CarDomain car);
+	SalesDomain newSale(SalesDomain newSales) throws Exception;
+	SalesDomain newSale(CustomerDomain customer, MerchantDomain merchant, CarDomain car) throws Exception;
 }

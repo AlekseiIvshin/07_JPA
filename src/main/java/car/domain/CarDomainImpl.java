@@ -1,7 +1,6 @@
 package car.domain;
 
 import car.dao.modifiacation.Modification;
-import characteristic.domain.CharacteristicDomainComposite;
 
 public class CarDomainImpl implements CarDomain {
 
@@ -9,7 +8,6 @@ public class CarDomainImpl implements CarDomain {
 	private String mark;
 	private String model;
 	private String modification;
-	private CharacteristicDomainComposite characteristics;
 
 	public CarDomainImpl(long id) {
 		this.id = id;
@@ -41,14 +39,6 @@ public class CarDomainImpl implements CarDomain {
 
 	public void setModification(String modification) {
 		this.modification = modification;
-	}
-
-	public void setCharacteristic(CharacteristicDomainComposite characteristics) {
-		this.characteristics = characteristics;
-	}
-
-	public CharacteristicDomainComposite getCharacteristics() {
-		return characteristics;
 	}
 
 	@Override

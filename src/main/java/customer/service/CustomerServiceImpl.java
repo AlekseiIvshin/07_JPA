@@ -11,6 +11,11 @@ public class CustomerServiceImpl
 		extends DomainServiceImpl<CustomerDomain, Integer, Customer, Integer, CustomerDAOImpl>
 		implements CustomerService{
 
+	public CustomerServiceImpl(){
+		super();
+		dao = new CustomerDAOImpl(entityManager);
+	}
+	
 	public CustomerDomain contains(CustomerDomain customer) {
 		Customer customerDao = mapper.map(customer, Customer.class);
 		return mapper.map(dao.contains(customerDao),CustomerDomain.class);

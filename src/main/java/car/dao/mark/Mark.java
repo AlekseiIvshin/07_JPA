@@ -9,13 +9,14 @@ import javax.persistence.Table;
 
 /**
  * Entity of table 'car_mark'.
+ * 
  * @author AlekseiIvshin
  *
  */
 @Entity
 @Table(name = "car_mark")
 public class Mark {
-	
+
 	/**
 	 * Car mark id.
 	 */
@@ -23,20 +24,22 @@ public class Mark {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_car_mark")
 	private int id;
-	
+
 	/**
 	 * Car mark name.
 	 */
-	@Column(name = "name")
+	@Column(name = "name", unique = true)
 	private String name;
-	
+
 	/**
-	 * Default constructor.	
+	 * Default constructor.
 	 */
-	public Mark() { }
+	public Mark() {
+	}
 
 	/**
 	 * Constructor with parameters.
+	 * 
 	 * @param name new mark name
 	 */
 	public Mark(String name) {
@@ -58,9 +61,9 @@ public class Mark {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Mark [id="+id+", name="+name+"]";
+		return "Mark [id=" + id + ", name=" + name + "]";
 	}
 }

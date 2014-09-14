@@ -6,7 +6,7 @@ import merchant.domen.MerchantDomain;
 
 public interface MerchantService {
 
-	public List<MerchantDomain> getAll();
+	public List<MerchantDomain> get(int offset, int count);
 
 	public MerchantDomain change(MerchantDomain changedDomainMerchant);
 

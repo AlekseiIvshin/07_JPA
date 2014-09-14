@@ -28,13 +28,11 @@ public class MerchantServiceImpl implements MerchantService {
 		em = emf.createEntityManager();
 	}
 
-	public List<MerchantDomain> getAll() {
+	public List<MerchantDomain> get(int offset, int count) {
 		MerchantDAO  merchantDAO = new MerchantDAOImpl(em);
-		List<Merchant> merchants = merchantDAO.findAll();
+		List<Merchant> merchants = merchantDAO.find(offset, count);
 		Mapper mapper = new MainMapper();
-		List<MerchantDomain> res = mapper.mapAsList(merchants, MerchantDomain.class);
-		LOG.info(res.size() +"");
-		return res;
+		return mapper.mapAsList(merchants, MerchantDomain.class);
 	}
 
 	public MerchantDomain change(MerchantDomain changedDomainMerchant) {

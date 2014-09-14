@@ -3,7 +3,6 @@ package car.domain;
 import java.util.List;
 
 import car.dao.modifiacation.Modification;
-import characteristic.domain.CharacteristicDomainComposite;
 
 /**
  * Car interface.
@@ -55,15 +54,4 @@ public interface CarDomain {
 	 */
 	void setModification(String modification);
 	
-	/**
-	 * Set car characteristic.
-	 * @param characteristics characteristic list
-	 */
-	//void setCharacteristic(CharacteristicDomainComposite characteristics);
-	
-	/**
-	 * Get car characteristics.
-	 * @return car characteristics
-	 */
-	//CharacteristicDomainComposite getCharacteristics();
 }

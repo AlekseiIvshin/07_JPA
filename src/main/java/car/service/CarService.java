@@ -2,7 +2,6 @@ package car.service;
 
 import java.util.List;
 
-import characteristic.domain.CharacteristicDomainComposite;
 import car.domain.CarDomain;
 
 /**
@@ -12,11 +11,11 @@ import car.domain.CarDomain;
  */
 public interface CarService {
 
-	List<CarDomain> getAll();
-	List<CarDomain> getCars(String mark, String model, String modification);
-	CarDomain addCar(String mark, String model, 
-			String modification, CharacteristicDomainComposite characteristics);
-	CarDomain removeCar(String mark, String model, String modification);
-	
+	List<CarDomain> get(int offset, int count);
+	CarDomain addCar(String mark, String model, String modification);
+	void removeCar(String mark, String model, String modification);
+	CarDomain addCar(CarDomain car);
+	void removeCar(CarDomain car);
+	CarDomain findOne(String mark, String model, String modification);
 	
 }

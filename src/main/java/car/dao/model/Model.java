@@ -9,17 +9,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import car.dao.mark.Mark;
 
-
 /**
  * Entity of table 'car_model'.
+ * 
  * @author AlekseiIvshin
  *
  */
 @Entity
-@Table(name = "car_model")
+@Table(name = "car_model", 
+	uniqueConstraints = { @UniqueConstraint(columnNames = {
+		"name", "id_car_mark" }) })
 public class Model {
 
 	/**
@@ -29,14 +32,14 @@ public class Model {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_car_model")
 	private int id;
-	
+
 	/**
 	 * Car model name.
 	 */
 	@Column(name = "name")
 	private String name;
-	
-	/** 
+
+	/**
 	 * Car mark.
 	 */
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -46,13 +49,17 @@ public class Model {
 	/**
 	 * Default constructor.
 	 */
-	public Model() { }
+	public Model() {
+	}
+
 	public Model(String name, Mark mark) {
 		this.name = name;
 		this.mark = mark;
 	}
+
 	/**
 	 * Get model id.
+	 * 
 	 * @return id
 	 */
 	public final int getId() {
@@ -61,7 +68,9 @@ public class Model {
 
 	/**
 	 * Set model id.
-	 * @param id new id
+	 * 
+	 * @param id
+	 *            new id
 	 */
 	public final void setId(final int id) {
 		this.id = id;
@@ -69,6 +78,7 @@ public class Model {
 
 	/**
 	 * Get model name.
+	 * 
 	 * @return name
 	 */
 	public final String getName() {
@@ -77,7 +87,9 @@ public class Model {
 
 	/**
 	 * Set model name.
-	 * @param name new name
+	 * 
+	 * @param name
+	 *            new name
 	 */
 	public final void setName(final String name) {
 		this.name = name;
@@ -85,6 +97,7 @@ public class Model {
 
 	/**
 	 * Get model mark.
+	 * 
 	 * @return current mark
 	 */
 	public final Mark getMark() {
@@ -93,14 +106,17 @@ public class Model {
 
 	/**
 	 * Set model mark.
-	 * @param mark model mark
+	 * 
+	 * @param mark
+	 *            model mark
 	 */
 	public final void setMark(final Mark mark) {
 		this.mark = mark;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Model [id="+id+", name="+name+", mark="+mark.toString()+"]";
+		return "Model [id=" + id + ", name=" + name + ", mark="
+				+ mark.toString() + "]";
 	}
 }

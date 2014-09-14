@@ -8,7 +8,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ch.qos.logback.core.util.DynamicClassLoadingException;
+import common.App;
 import common.dao.GenericDAO;
 import common.mapper.MainMapper;
 import common.mapper.Mapper;
@@ -18,13 +22,15 @@ import sales.dao.Sales;
 import sales.dao.SalesDAOImpl;
 import sales.domain.SalesDomain;
 
-public class DomainServiceImpl<DomainClass, DomainId,Model, IdType, DAOClass extends GenericDAO<Model, IdType>> implements DomainService<DomainClass, IdType> {
+public abstract class DomainServiceImpl<DomainClass, DomainId,Model, IdType, DAOClass extends GenericDAO<Model, IdType>> implements DomainService<DomainClass, IdType> {
 
 	protected EntityManager entityManager;
 	protected DAOClass dao;
 	protected Class<DomainClass> domainType;
 	protected Class<Model> modelType;
 	protected Mapper mapper;
+	
+	static final Logger LOG = LoggerFactory.getLogger(DomainServiceImpl.class);
 	
 	public DomainServiceImpl(){
 		EntityManagerFactory entityManagerFactory = Persistence

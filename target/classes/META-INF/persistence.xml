@@ -4,11 +4,9 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>car.dao.mark.Mark</class>
 		<class>car.dao.model.Model</class>
-		<class>characteristic.dao.Characteristic</class>
 		<class>customer.dao.Customer</class>
 		<class>merchant.dao.Merchant</class>
 		<class>car.dao.modifiacation.Modification</class>
-		<class>characteristic.values.dao.CharacteristicValue</class>
 		<class>store.dao.Store</class>
 		<class>sales.dao.Sales</class>
 		<properties>
@@ -16,7 +14,7 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/auto_show"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="9404"/>
         </properties>
 	</persistence-unit>
 </persistence>
