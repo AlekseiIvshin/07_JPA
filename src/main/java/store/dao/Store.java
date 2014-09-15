@@ -12,12 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.CacheRegionDefinition.CacheType;
-
 import car.dao.modifiacation.Modification;
 
 /**
  * Entity for table 'store'.
+ * 
  * @author Aleksei_Ivshin
  *
  */
@@ -32,36 +31,37 @@ public class Store {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_store")
 	private int id;
-	
+
 	/**
 	 * Store count.
 	 */
 	@Column(name = "count")
 	private int count;
-	
+
 	/**
 	 * Price for car.
 	 */
 	@Column(name = "price")
 	private BigDecimal price;
-	
+
 	/**
 	 * Can test drive car.
 	 */
 	@Column(name = "testdrive_avaible", length = 1, columnDefinition = "BIT")
 	private boolean testDriveAvaible;
-	
+
 	/**
 	 * Car.
 	 */
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_car_modification")
 	private Modification modification;
-	
+
 	/**
 	 * Default constructor.
 	 */
-	public Store() { }
+	public Store() {
+	}
 
 	public int getId() {
 		return id;

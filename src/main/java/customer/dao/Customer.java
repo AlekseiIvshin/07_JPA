@@ -66,7 +66,7 @@ public class Customer {
 	private Date birthDate;
 	
 	/**
-	 * Default constuctor.
+	 * Default constructor.
 	 */
 	public Customer() { }
 

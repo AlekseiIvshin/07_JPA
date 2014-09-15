@@ -5,6 +5,11 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 import car.dao.mark.Mark;
 
+/**
+ * Entity model for car model.
+ * @author Aleksei_Ivshin
+ *
+ */
 @StaticMetamodel(Model.class)
 public class Model_ {
 

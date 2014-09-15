@@ -1,15 +1,24 @@
 package store.service;
 
 import store.domain.StoreDomain;
-
-import java.util.List;
-
 import car.domain.CarDomain;
 
-public interface StoreService {
+import common.service.DomainService;
 
-	List<StoreDomain> get(int offset, int count);
-	StoreDomain change(StoreDomain changedDomainStore);
-	StoreDomain create(StoreDomain newStore);
+/**
+ * Store service interface.
+ * 
+ * @author Aleksei_Ivshin
+ *
+ */
+public interface StoreService extends DomainService<StoreDomain, Integer> {
+
+	/**
+	 * Get store by car.
+	 * 
+	 * @param car
+	 *            car
+	 * @return founded store
+	 */
 	StoreDomain get(CarDomain car);
 }

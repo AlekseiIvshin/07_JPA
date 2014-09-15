@@ -40,9 +40,10 @@ public class Mark {
 	/**
 	 * Constructor with parameters.
 	 * 
-	 * @param name new mark name
+	 * @param name
+	 *            new mark name
 	 */
-	public Mark(String name) {
+	public Mark(final String name) {
 		this.name = name;
 	}
 
@@ -63,7 +64,7 @@ public class Mark {
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return "Mark [id=" + id + ", name=" + name + "]";
 	}
 }

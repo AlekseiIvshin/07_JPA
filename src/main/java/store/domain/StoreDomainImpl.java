@@ -2,12 +2,33 @@ package store.domain;
 
 import car.domain.CarDomain;
 
+/**
+ * Store domain implementation.
+ * @author Aleksei_Ivshin
+ *
+ */
 public class StoreDomainImpl implements StoreDomain {
 
+	/**
+	 * Store item id.
+	 */
 	private int id;
+
+	/**
+	 * Car in store.
+	 */
 	private CarDomain car;
+	/**
+	 * Car quantity.
+	 */
 	private int quantity;
+	/**
+	 * Current car price.
+	 */
 	private float price;
+	/**
+	 * Car enable to test drive.
+	 */
 	private boolean canTestDrive;
 
 	public boolean canSale() {
@@ -46,11 +67,11 @@ public class StoreDomainImpl implements StoreDomain {
 		this.price = price;
 	}
 
-	public boolean isCanTestDrive() {
+	public boolean getEnableTestDrive() {
 		return canTestDrive;
 	}
 
-	public void setCanTestDrive(boolean canTestDrive) {
+	public void setEnableTestDrive(boolean canTestDrive) {
 		this.canTestDrive = canTestDrive;
 	}
 

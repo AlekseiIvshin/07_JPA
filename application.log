@@ -11613,3 +11613,21 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 23:35:44.879 [main] INFO  common.App - Get merchant: CustomerDomain [id=1, surname=Пупкин, name=Василий, patronymic=Сидорович]
 23:35:45.013 [main] INFO  common.App - Get car: Car [id=60, mark=Mark 3, model=Model2, modification=Modif5]
 23:35:45.554 [main] INFO  common.App - sales.domain.SalesDomainImpl@392a04e7
+15:20:14.130 [main] INFO  common.App - Created: Car [id=0, mark=Audi, model=R8, modification=620 ls]
+15:28:59.466 [main] INFO  common.App - Created: Car [id=0, mark=Audi, model=R8, modification=620 ls]
+15:29:59.479 [main] INFO  common.App - Created: Car [id=3, mark=Audi, model=R8, modification=620 ls]
+15:34:11.745 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Column 'id_car_model' cannot be null
+15:34:11.745 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Column 'id_car_model' cannot be null
+15:36:35.037 [main] INFO  common.App - Created: Car [id=4, mark=Audi, model=R8, modification=620 ls]
+15:37:10.467 [main] INFO  common.App - Created: Car [id=5, mark=ZZaazzz, model=ZaaiZ, modification=620 ls]
+15:37:47.204 [main] INFO  common.App - Created: Car [id=6, mark=ZZaazzz, model=ZaaiZ, modification=620 ls]
+15:40:59.073 [main] INFO  common.App - Created: Car [id=7, mark=ZZaazzz, model=ZaaiZ, modification=620 ls]
+16:07:55.038 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Column 'id_car_model' cannot be null
+16:07:55.038 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Column 'id_car_model' cannot be null
+16:09:09.442 [main] INFO  common.App - Created: Car [id=8, mark=ZZaazzz, model=ZaaiZ2, modification=620 lss]
+16:09:21.807 [main] INFO  common.App - Created: Car [id=9, mark=ZZaazzz, model=ZaaiZ3, modification=620 lss]
+16:09:34.179 [main] ERROR common.App - Error
+java.sql.SQLException: This car (ZZaazzz ZaaiZ3 620 lss) is exist!
+	at car.service.CarServiceImpl.addCar(CarServiceImpl.java:108) ~[classes/:na]
+	at common.App.createNewCar(App.java:155) ~[classes/:na]
+	at common.App.main(App.java:66) ~[classes/:na]

@@ -1,7 +1,6 @@
 package car.dao.mark;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
@@ -12,58 +11,64 @@ import javax.persistence.criteria.Root;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import car.dao.model.ModelDAOImpl;
 import common.dao.GenericDAOImpl;
-import customer.dao.Customer;
-import customer.dao.Customer_;
 
-public class MarkDAOImpl 
-		extends GenericDAOImpl<Mark, Integer>
-		implements MarkDAO{
+/**
+ * Mark DAO implementation.
+ * 
+ * @author Aleksei_Ivshin
+ *
+ */
+public class MarkDAOImpl extends GenericDAOImpl<Mark, Integer> implements
+		MarkDAO {
 
+	/**
+	 * Logger.
+	 */
 	static final Logger LOG = LoggerFactory.getLogger(MarkDAOImpl.class);
-	
-	public MarkDAOImpl(EntityManager entityManager) {
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param entityManager
+	 *            entity manager
+	 */
+	public MarkDAOImpl(final EntityManager entityManager) {
 		super(entityManager);
 	}
-	
 
-	public List<Mark> find(String name) {
-		return entityManager
-				.createQuery("SELECT m FROM Mark m WHERE m.name LIKE :markName")
-				.setParameter("markName", name)
-				.getResultList();
-	}
-
-
-	public List<Mark> findAny(String name) {
+	/**
+	 * Find marks with name like parameter.
+	 * 
+	 * @param name
+	 *            part or full car mark name
+	 * @return founded marks
+	 */
+	public final List<Mark> findAny(final String name) {
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<Mark> query = builder.createQuery(Mark.class);
 		Root<Mark> root = query.from(Mark.class);
-		query
-			.where(
-				builder.like(
-						root.get(Mark_.name), 
-						name))
-			.select(root);
-		TypedQuery<Mark>ctq = entityManager.createQuery(query);
+		query.where(builder.like(root.get(Mark_.name), name)).select(root);
+		TypedQuery<Mark> ctq = entityManager.createQuery(query);
 		return ctq.getResultList();
 	}
 
-
-	public Mark findOne(String name) {
+	/**
+	 * Find marks with name equal parameter.
+	 * 
+	 * @param name
+	 *            full mark name
+	 * @return founded mark or null (if not found)
+	 */
+	public final Mark findOne(final String name) {
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 		CriteriaQuery<Mark> query = builder.createQuery(Mark.class);
 		Root<Mark> root = query.from(Mark.class);
-		query
-			.where(
-				builder.equal(
-						root.get(Mark_.name), 
-						name));
+		query.where(builder.equal(root.get(Mark_.name), name));
 		TypedQuery<Mark> ctq = entityManager.createQuery(query);
-		try{
+		try {
 			return ctq.getSingleResult();
-		} catch(NoResultException e){
+		} catch (NoResultException e) {
 			return null;
 		}
 	}

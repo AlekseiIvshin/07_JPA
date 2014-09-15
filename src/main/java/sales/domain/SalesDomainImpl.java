@@ -6,13 +6,37 @@ import merchant.domen.MerchantDomain;
 import car.domain.CarDomain;
 import customer.domain.CustomerDomain;
 
+/**
+ * Sale Domain implementation.
+ * 
+ * @author Aleksei_Ivshin
+ *
+ */
 public class SalesDomainImpl implements SalesDomain {
 
+	/**
+	 * Sale id.
+	 */
 	private int id;
+	/**
+	 * Car sold.
+	 */
 	private CarDomain car;
+	/**
+	 * Merchant, who sale car.
+	 */
 	private MerchantDomain merchant;
+	/**
+	 * Customer, who buy car.
+	 */
 	private CustomerDomain customer;
+	/**
+	 * Car price.
+	 */
 	private float price;
+	/**
+	 * Date of sale.
+	 */
 	private Date saleDate;
 
 	public int getId() {

@@ -1,24 +1,41 @@
 package customer.service;
 
-import car.domain.CarDomain;
 import common.service.DomainServiceImpl;
 import customer.dao.Customer;
-import customer.dao.CustomerDAO;
 import customer.dao.CustomerDAOImpl;
 import customer.domain.CustomerDomain;
 
-public class CustomerServiceImpl 
-		extends DomainServiceImpl<CustomerDomain, Integer, Customer, Integer, CustomerDAOImpl>
-		implements CustomerService{
+/**
+ * Customer service implementation.
+ * 
+ * @author Aleksei_Ivshin
+ *
+ */
+public class CustomerServiceImpl
+		extends
+		DomainServiceImpl
+		<CustomerDomain, Integer, Customer, Integer, CustomerDAOImpl>
+		implements CustomerService {
 
-	public CustomerServiceImpl(){
+	/**
+	 * Default constructor.
+	 */
+	public CustomerServiceImpl() {
 		super();
 		dao = new CustomerDAOImpl(entityManager);
 	}
-	
-	public CustomerDomain contains(CustomerDomain customer) {
+
+	/**
+	 * Find customer by passport.
+	 * 
+	 * @param customer
+	 *            some customer data
+	 * @return founded customer
+	 */
+	public final CustomerDomain findByPassport(final CustomerDomain customer) {
 		Customer customerDao = mapper.map(customer, Customer.class);
-		return mapper.map(dao.contains(customerDao),CustomerDomain.class);
+		return mapper
+				.map(dao.findByPassport(customerDao), CustomerDomain.class);
 	}
 
 }

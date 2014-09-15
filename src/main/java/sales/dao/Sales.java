@@ -21,6 +21,7 @@ import car.dao.modifiacation.Modification;
 
 /**
  * Entity of table 'sales'.
+ * 
  * @author AlekseiIvshin
  *
  */
@@ -36,12 +37,12 @@ public class Sales {
 	@Column(name = "id_sale")
 	private int id;
 
-	/** 
+	/**
 	 * Price in sale.
 	 */
 	@Column(name = "price")
 	private BigDecimal price;
-	
+
 	/**
 	 * Sale date.
 	 */
@@ -49,25 +50,25 @@ public class Sales {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date saleDate;
-	
+
 	/**
 	 * Sale modification.
 	 */
-	@ManyToOne(cascade=CascadeType.REMOVE)
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "id_car_modification")
 	private Modification modification;
-	
+
 	/**
 	 * Sale customer.
 	 */
-	@ManyToOne(cascade=CascadeType.REMOVE)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_customer")
 	private Customer customer;
-	
+
 	/**
 	 * Sale merchant.
 	 */
-	@ManyToOne(cascade=CascadeType.REMOVE)
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "id_merchant")
 	private Merchant merchant;
 

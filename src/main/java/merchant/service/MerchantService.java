@@ -1,14 +1,15 @@
 package merchant.service;
 
-import java.util.List;
+import common.service.DomainService;
 
 import merchant.domen.MerchantDomain;
 
-public interface MerchantService {
-
-	public List<MerchantDomain> get(int offset, int count);
-
-	public MerchantDomain change(MerchantDomain changedDomainMerchant);
-
-	public MerchantDomain create(MerchantDomain newMerchant);
+/**
+ * Merchant service interface.
+ * @author Aleksei_Ivshin
+ *
+ */
+public interface MerchantService 
+		extends DomainService<MerchantDomain, Integer> {
+	
 }

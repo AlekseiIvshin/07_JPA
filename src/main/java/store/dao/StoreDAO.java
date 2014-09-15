@@ -1,12 +1,23 @@
 package store.dao;
 
-import java.util.List;
-
 import common.dao.GenericDAO;
 
 import car.dao.modifiacation.Modification;
 
-public interface StoreDAO extends GenericDAO<Store, Integer>{
+/**
+ * Store DAO interface.
+ * 
+ * @author Aleksei_Ivshin
+ *
+ */
+public interface StoreDAO extends GenericDAO<Store, Integer> {
 
-	public Store find(Modification modification);
+	/**
+	 * Find store by car modification.
+	 * 
+	 * @param modification
+	 *            car modification
+	 * @return founded store item
+	 */
+	Store find(Modification modification);
 }

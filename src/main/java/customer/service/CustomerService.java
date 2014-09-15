@@ -1,10 +1,23 @@
 package customer.service;
 
-import car.domain.CarDomain;
 import common.service.DomainService;
 import customer.domain.CustomerDomain;
 
-public interface CustomerService extends DomainService<CustomerDomain, Integer>{
+/**
+ * Customer service interface.
+ * 
+ * @author Aleksei_Ivshin
+ *
+ */
+public interface CustomerService 
+		extends DomainService<CustomerDomain, Integer> {
 
-	CustomerDomain contains(CustomerDomain customer);
+	/**
+	 * Find customer by passport.
+	 * 
+	 * @param customer
+	 *            some customer data
+	 * @return founded customer
+	 */
+	CustomerDomain findByPassport(CustomerDomain customer);
 }

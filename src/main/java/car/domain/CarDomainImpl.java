@@ -1,15 +1,37 @@
 package car.domain;
 
-import car.dao.modifiacation.Modification;
-
+/**
+ * Car domain implementation.
+ * @author Aleksei_Ivshin
+ *
+ */
 public class CarDomainImpl implements CarDomain {
 
+	/**
+	 * Car id.
+	 */
 	private final long id;
+	
+	/**
+	 * Car mark name.
+	 */
 	private String mark;
+	
+	/**
+	 * Car model name.
+	 */
 	private String model;
+	
+	/**
+	 * Car modification.
+	 */
 	private String modification;
 
-	public CarDomainImpl(long id) {
+	/**
+	 * Constructor with set car id.
+	 * @param id car id
+	 */
+	public CarDomainImpl(final long id) {
 		this.id = id;
 	}
 
@@ -42,7 +64,7 @@ public class CarDomainImpl implements CarDomain {
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return "Car [id=" + id + ", mark=" + mark + ", model=" + model
 				+ ", modification=" + modification + "]";
 	}

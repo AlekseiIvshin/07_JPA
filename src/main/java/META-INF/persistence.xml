@@ -14,7 +14,7 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:mysql://localhost:3306/auto_show"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="9404"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
         </properties>
 	</persistence-unit>
 </persistence>

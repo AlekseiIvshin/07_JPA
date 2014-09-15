@@ -52,11 +52,6 @@ public class Model {
 	public Model() {
 	}
 
-	public Model(String name, Mark mark) {
-		this.name = name;
-		this.mark = mark;
-	}
-
 	/**
 	 * Get model id.
 	 * 
@@ -115,7 +110,7 @@ public class Model {
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return "Model [id=" + id + ", name=" + name + ", mark="
 				+ mark.toString() + "]";
 	}
