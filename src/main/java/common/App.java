@@ -150,8 +150,22 @@ public class App {
 		return sale;
 	}
 
-	private static CarDomain createNewCar(String newMark, String newModel,
-			String newModification) throws SQLException {
+	/**
+	 * Create new car.
+	 * 
+	 * @param newMark
+	 *            mark name
+	 * @param newModel
+	 *            model name
+	 * @param newModification
+	 *            modification
+	 * @return created car
+	 * @throws SQLException
+	 *             some exception
+	 */
+	private static CarDomain createNewCar(final String newMark,
+			final String newModel, final String newModification)
+			throws SQLException {
 		return CAR_SERVICE.addCar(newMark, newModel, newModification);
 	}
 }
