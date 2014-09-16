@@ -64,7 +64,7 @@ public class CarServiceImpl
 	 * @param modification
 	 *            car modification
 	 * @return created car
-	 * @throws SQLException
+	 * @throws SQLException some exception
 	 */
 	public final CarDomain addCar(final String mark, final String model,
 			final String modification) throws SQLException {
@@ -73,45 +73,16 @@ public class CarServiceImpl
 		ModificationDAO modifDAO = new ModificationDAOImpl(entityManager);
 		entityManager.getTransaction().begin();
 		// find or create mark
-		Mark markData = markDAO.findOne(mark);
-		Modification modif = null;
-		if (markData == null) {
-			markData = new Mark(mark);
-			markData = markDAO.create(markData);
-
-			Model modelData = new Model();
-			modelData.setMark(markData);
-			modelData.setName(model);
-			modelData = modelDAO.create(modelData);
-
-			modif = new Modification();
-			modif.setModel(modelData);
-			modif.setName(modification);
-			modif = modifDAO.create(modif);
-		} else {
-			Model modelData = modelDAO.findOne(markData, model);
-			if (modelData == null) {
-				modelData = new Model();
-				modelData.setMark(markData);
-				modelData.setName(model);
-				modelData = modelDAO.create(modelData);
-				
-				
-				modif = new Modification();
-				modif.setModel(modelData);
-				modif.setName(modification);
-				modif = modifDAO.create(modif);
-			} else {
-				modif = modifDAO.findOne(modelData, modification);
-				if (modif != null) {
-					entityManager.getTransaction().rollback();
-					throw new SQLException("This car (" + mark + " " + model
-							+ " " + modification + ") is exist!");
-				}
-
-				modif = modifDAO.create(modif);
-			}
+		Mark markData = markDAO.findOrCreate(mark);
+		Model modelData = modelDAO.findOrCreate(markData, model);
+		Modification modif = modifDAO.findOne(modelData, modification);
+		if (modif != null) {
+			entityManager.getTransaction().rollback();
+			throw new SQLException("This car (" + mark + " " + model + " "
+					+ modification + ") is exist!");
 		}
+
+		modif = modifDAO.create(modif);
 
 		entityManager.getTransaction().commit();
 		return mapper.map(modif, CarDomain.class);

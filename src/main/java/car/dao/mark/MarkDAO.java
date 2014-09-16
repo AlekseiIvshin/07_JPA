@@ -29,4 +29,13 @@ public interface MarkDAO extends GenericDAO<Mark, Integer> {
 	 * @return founded mark or null (if not found)
 	 */
 	Mark findOne(String name);
+	
+	/**
+	 * Find car mark. If not found create new mark with this name
+	 * 
+	 * @param name
+	 *            mark name
+	 * @return founded or created mark
+	 */
+	Mark findOrCreate(String name);
 }

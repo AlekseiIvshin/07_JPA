@@ -7,18 +7,8 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.xml.registry.infomodel.EmailAddress;
-
-import com.sun.mail.util.QEncoderStream;
-
-import car.dao.mark.Mark;
-import car.dao.mark.MarkDAO;
-import car.dao.mark.MarkDAOImpl;
 import car.dao.model.Model;
-import car.dao.model.ModelDAO;
-import car.dao.model.ModelDAOImpl;
 import common.dao.GenericDAOImpl;
 
 /**

@@ -34,4 +34,15 @@ public interface ModelDAO extends GenericDAO<Model, Integer> {
 	 * @return founded model or null (if not found)
 	 */
 	Model findOne(Mark mark, String name);
+	
+	/**
+	 * Find car model. If not founded create this model
+	 * 
+	 * @param mark
+	 *            car mark
+	 * @param name
+	 *            model name
+	 * @return founded or created model
+	 */
+	Model findOrCreate(Mark mark, String name);
 }

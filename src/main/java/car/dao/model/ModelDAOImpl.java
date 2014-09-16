@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import car.dao.mark.Mark;
-import car.dao.modifiacation.Modification_;
 import common.dao.GenericDAOImpl;
 
 /**
@@ -73,15 +72,34 @@ public class ModelDAOImpl extends GenericDAOImpl<Model, Integer> implements
 		CriteriaQuery<Model> query = builder.createQuery(Model.class);
 		Root<Model> root = query.from(Model.class);
 		query.where(
-				builder.and(
-						builder.equal(root.get(Model_.mark), mark),
-						builder.equal(root.get(Model_.name), name)))
-				.select(root);
+				builder.and(builder.equal(root.get(Model_.mark), mark),
+						builder.equal(root.get(Model_.name), name))).select(
+				root);
 		TypedQuery<Model> ctq = entityManager.createQuery(query);
 		try {
 			return ctq.getSingleResult();
 		} catch (NoResultException e) {
 			return null;
 		}
+	}
+
+	/**
+	 * Find car model. If not founded create this model
+	 * 
+	 * @param mark
+	 *            car mark
+	 * @param name
+	 *            model name
+	 * @return founded or created model
+	 */
+	public final Model findOrCreate(final Mark mark, final String name) {
+		Model modelData = findOne(mark, name);
+		if (modelData == null) {
+			modelData = new Model();
+			modelData.setMark(mark);
+			modelData.setName(name);
+			modelData = create(modelData);
+		}
+		return modelData;
 	}
 }
